@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIYARA | Premium Women's Fashion</title>
+    <meta name="description" content="Discover premium Pakistani-inspired three-piece collections crafted with elegance, comfort, and timeless style.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        priyaraBg: '#FFFFFF',
+                        priyaraSec: '#F7F5F2',
+                        priyaraGold: '#C9A86A',
+                        priyaraText: '#111111',
+                        priyaraGray: '#ECECEC',
+                        priyaraGoldHover: '#D9B97A',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Playfair Display', 'serif'],
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@200;300;400;500;600&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Premium Styles -->
+    <style>
+        /* Shimmer Animation for Text */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .gold-shimmer-text {
+            background: linear-gradient(90deg, #111111 0%, #C9A86A 50%, #111111 100%);
+            background-size: 200% auto;
+            animation: shimmer 3s infinite linear;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .gold-shimmer-text {
+            background: linear-gradient(90deg, #ffffff 0%, #C9A86A 50%, #ffffff 100%);
+            background-size: 200% auto;
+            animation: shimmer 3s infinite linear;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Particles animation */
+        @keyframes particleUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-20vh) scale(1.2); opacity: 0; }
+        }
+        .particle {
+            position: absolute;
+            background: rgba(201, 168, 106, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleUp 15s infinite linear;
+        }
+
+        /* Luxury Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F5F2;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #18181b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C9A86A;
+            border-radius: 10px;
+        }
+
+        /* Magnification Lens Effect */
+        .zoom-img-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .zoom-img {
+            transition: transform 0.4s ease-out;
+        }
+        .zoom-img-container:hover .zoom-img {
+            transform: scale(1.3);
+        }
+
+        /* Link Underline Wave */
+        .lux-link {
+            position: relative;
+        }
+        .lux-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #C9A86A;
+            transform-origin: bottom right;
+            transition: transform 0.4s ease-out;
+        }
+        .lux-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-priyaraText dark:text-stone-100 font-sans transition-colors duration-300">
+
+    <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white dark:bg-zinc-950 transition-all duration-750">
+        <div class="relative w-48 h-48 flex items-center justify-center">
+            <!-- Shimmer circular accent border -->
+            <div class="absolute w-36 h-36 border border-priyaraGold/40 rounded-full animate-spin" style="animation-duration: 3s;"></div>
+            <div class="absolute w-40 h-40 border border-dashed border-priyaraGold/20 rounded-full animate-spin" style="animation-duration: 10s;"></div>
+            
+            <div class="z-10 p-2 bg-white dark:bg-zinc-950 rounded-full shadow-lg">
+                <img src="ChatGPT Image Jun 21, 2026, 06_29_23 PM.png" alt="PRIYARA logo" class="w-24 h-24 object-contain">
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <span class="text-xl font-serif tracking-[0.25em] text-priyaraText font-bold uppercase gold-shimmer-text">PRIYARA</span>
+            <p class="text-[11px] tracking-[0.25em] text-priyaraGold uppercase font-serif italic mt-1">Where Elegance Meets Comfort.</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="fixed top-0 left-0 h-1 bg-priyaraGold z-50 transition-all duration-100" id="progressBar" style="width: 0%;"></div>
+
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-priyaraGray dark:border-zinc-900 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                
+                <!-- Corner Logo Image instead of text -->
+                <div class="flex items-center">
+                    <button onclick="navigateTo('home')" class="flex items-center gap-3" aria-label="Go to home">
+                        <img src="ChatGPT Image Jun 21, 2026, 06_29_23 PM.png" alt="PRIYARA Corner Logo" class="h-12 sm:h-16 w-auto object-contain bg-white rounded-lg p-1 shadow-sm border border-priyaraGray/40 dark:border-zinc-800">
+                    </button>
+                </div>
+
+                <!-- Left navigation elements (Desktop Only) -->
+                <div class="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-priyaraText/80 dark:text-stone-300">
+                    <button onclick="navigateTo('home')" class="lux-link hover:text-priyaraGold transition-colors">The Atelier</button>
+                    <a href="#featured" class="lux-link hover:text-priyaraGold transition-colors">Collections</a>
+                    <a href="#promise" class="lux-link hover:text-priyaraGold transition-colors">Our Promise</a>
+                    <a href="#faq" class="lux-link hover:text-priyaraGold transition-colors">FAQ</a>
+                    <a href="#contact" class="lux-link hover:text-priyaraGold transition-colors">Contact</a>
+                </div>
+
+                <!-- Right Toolbar menu options -->
+                <div class="flex items-center space-x-3 sm:space-x-6">
+                    <!-- Theme toggler -->
+                    <button onclick="toggleDarkMode()" class="p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Toggle visual theme">
+                        <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                    </button>
+
+                    <!-- Search trigger -->
+                    <button onclick="toggleSearchOverlay(true)" class="p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Search catalog">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+
+                    <!-- Wishlist toggle -->
+                    <button onclick="toggleWishlistSidebar(true)" class="p-2 relative text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Open wishlist">
+                        <i class="fa-regular fa-heart text-lg" id="heartIcon"></i>
+                        <span id="wishlistCount" class="absolute -top-1 -right-1 bg-priyaraGold text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                    </button>
+
+                    <!-- Shopping Cart drawer toggle -->
+                    <button onclick="toggleCartSidebar(true)" class="p-2 relative text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Open shopping bag">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-priyaraText dark:bg-white text-white dark:text-priyaraText text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden border border-priyaraGold">0</span>
+                    </button>
+
+                    <!-- Drawer Menu Trigger on Mobile -->
+                    <button onclick="toggleMobileMenu(true)" class="lg:hidden p-2 text-priyaraText dark:text-white" aria-label="Open menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Side Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex transition-opacity duration-300">
+        <div class="bg-white dark:bg-zinc-950 w-4/5 max-w-sm h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[-100%] transition-transform duration-300" id="mobileMenuContainer">
+            <button onclick="toggleMobileMenu(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
+            <div class="space-y-8 mt-12">
+                <img src="ChatGPT Image Jun 21, 2026, 06_29_23 PM.png" alt="PRIYARA Logo" class="h-20 w-auto object-contain bg-white rounded-xl p-2 shadow-sm">
+                
+                <div class="flex flex-col space-y-5 text-sm uppercase tracking-[0.2em] font-medium text-stone-700 dark:text-stone-200">
+                    <button onclick="toggleMobileMenu(false); navigateTo('home')" class="text-left py-2 border-b border-stone-100 dark:border-zinc-900">The Atelier</button>
+                    <a href="#featured" onclick="toggleMobileMenu(false)" class="py-2 border-b border-stone-100 dark:border-zinc-900">Featured Collections</a>
+                    <a href="#promise" onclick="toggleMobileMenu(false)" class="py-2 border-b border-stone-100 dark:border-zinc-900">Our Promise</a>
+                    <a href="#faq" onclick="toggleMobileMenu(false)" class="py-2 border-b border-stone-100 dark:border-zinc-900">Delivery FAQs</a>
+                    <a href="#contact" onclick="toggleMobileMenu(false)" class="py-2 font-semibold">Contact Stylists</a>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-[10px] uppercase tracking-[0.25em] text-stone-400">PRIYARA © 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay" class="fixed inset-0 z-50 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md hidden flex flex-col justify-start pt-24 px-4">
+        <button onclick="toggleSearchOverlay(false)" class="absolute top-8 right-8 p-3 text-priyaraText dark:text-white hover:text-priyaraGold transition-all">
+            <i class="fa-solid fa-xmark text-3xl"></i>
+        </button>
+        <div class="max-w-3xl mx-auto w-full text-center space-y-8">
+            <h2 class="text-2xl font-serif tracking-[0.1em] text-priyaraText dark:text-white uppercase">Search collections</h2>
+            <div class="relative">
+                <input type="text" id="searchInput" oninput="performSearch()" placeholder="Search White Elegance, Cotton, Georgette..." class="w-full text-xl sm:text-2xl font-serif border-b border-priyaraGold bg-transparent py-4 text-center text-priyaraText dark:text-white focus:outline-none placeholder-stone-300 dark:placeholder-zinc-700">
+                <i class="fa-solid fa-magnifying-glass absolute right-4 bottom-5 text-priyaraGold text-xl"></i>
+            </div>
+            <div id="searchResults" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[50vh] overflow-y-auto pt-4 text-left">
+                <!-- Filled dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main View Section -->
+    <main id="homeView" class="block">
+        
+        <!-- Editorial Fullscreen Parallax Hero Section with best cover.png slightly blurred and darkened for perfect readability -->
+        <section class="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
+            <!-- Fullscreen Cover Background with best cover.png -->
+            <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000" style="background-image: url('best cover.png');"></div>
+            <!-- Glassmorphism Blur & Dark Overlay for optimal text legibility -->
+            <div class="absolute inset-0 bg-black/45 backdrop-blur-[3px] pointer-events-none"></div>
+            
+            <!-- Soft floating luxury gold dust particles in Hero area -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none" id="heroParticles"></div>
+
+            <div class="max-w-4xl mx-auto text-center px-4 z-10 space-y-6 sm:space-y-8">
+                <p class="text-[11px] sm:text-[13px] uppercase tracking-[0.45em] text-priyaraGold font-bold">
+                    Where Elegance Meets Comfort
+                </p>
+
+                <div class="flex flex-col items-center space-y-6">
+                    <span class="text-4xl sm:text-6xl tracking-[0.3em] text-white uppercase font-extrabold gold-shimmer-text">PRIYARA</span>
+                    
+                    <div class="h-14 sm:h-20 flex items-center justify-center">
+                        <h1 id="typingText" class="text-lg sm:text-2xl lg:text-3xl font-serif italic tracking-[0.08em] text-stone-100 border-r border-priyaraGold px-2 whitespace-nowrap overflow-hidden max-w-full font-bold"></h1>
+                    </div>
+                </div>
+
+                <p class="text-[13px] sm:text-[16px] text-stone-200 tracking-wide leading-relaxed max-w-xl mx-auto font-serif drop-shadow-md">
+                    Discover premium Pakistani-inspired three-piece collections crafted with elegance, comfort, and timeless style. Designed for modern women who appreciate timeless beauty and sophisticated style.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4">
+                    <a href="#featured" class="w-full sm:w-auto px-8 py-4 text-[11px] uppercase tracking-[0.25em] bg-white text-priyaraText hover:bg-priyaraGold hover:text-white border border-priyaraGold rounded-full transition-all duration-500 font-bold shadow-lg hover:shadow-xl text-center">
+                        Explore Collection
+                    </a>
+                    <a href="#featured" class="w-full sm:w-auto px-8 py-4 text-[11px] uppercase tracking-[0.25em] bg-[#111111] hover:bg-priyaraGold text-white border border-[#111111] hover:border-priyaraGold rounded-full transition-all duration-500 font-bold text-center">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-70 z-10">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-priyaraGold mb-2">Scroll To View</span>
+                <i class="fa-solid fa-chevron-down text-priyaraGold text-sm"></i>
+            </div>
+        </section>
+
+        <!-- Featured Collection Section -->
+        <section id="featured" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-3">
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-bold">Exquisite Collections</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif tracking-widest text-priyaraText dark:text-white leading-tight">
+                        Featured Masterpieces
+                    </h2>
+                    <div class="w-12 h-[1px] bg-priyaraGold"></div>
+                </div>
+
+                <!-- Custom Category Filters -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="filterCategory('All')" id="cat-All" class="cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-[#111111] text-white border border-[#111111]">
+                        All
+                    </button>
+                    <button onclick="filterCategory('Premium Cotton Three-Piece')" id="cat-Cotton" class="cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent">
+                        Premium Cotton Three-Piece
+                    </button>
+                    <button onclick="filterCategory('Premium Georgette Three-Piece')" id="cat-Georgette" class="cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent">
+                        Premium Georgette Three-Piece
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic grid container of 8 items -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12" id="productGrid">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- Why Choose PRIYARA & Our Story section -->
+        <section id="promise" class="py-24 bg-[#F7F5F2] dark:bg-zinc-950 border-y border-priyaraGray dark:border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Story Block -->
+                <div class="max-w-3xl mx-auto text-center space-y-6 mb-24">
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-bold">The Authentic Narrative</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif tracking-widest text-priyaraText dark:text-white leading-tight">
+                        Our Story
+                    </h2>
+                    <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed font-serif">
+                        PRIYARA is a premium women's fashion brand dedicated to offering elegant Pakistani-inspired three-piece collections. Every design is carefully selected for women who appreciate timeless beauty, premium craftsmanship, comfort, and sophisticated style. We believe fashion is more than clothing—it's confidence, elegance, and self-expression.
+                    </p>
+                    <div class="w-12 h-[1px] bg-priyaraGold mx-auto"></div>
+                </div>
+
+                <!-- Brand Value Specifications -->
+                <div class="text-center space-y-3 mb-16">
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Atelier Promise</span>
+                    <h2 class="text-2xl sm:text-3xl font-serif tracking-widest text-priyaraText dark:text-white">
+                        Why PRIYARA
+                    </h2>
+                    <p class="text-xs text-stone-400 uppercase tracking-widest">Crafted with Timeless Sophistication</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-gem text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Premium Quality</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Sourcing exquisite, long-lasting fabrics that embody luxury and visual perfection.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Elegant Designs</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Handcrafted traditional frameworks designed to enhance your confidence and natural presence.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-globe text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Pakistani Inspired</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Artfully tailored layouts matching standard luxury South Asian patterns and drapes.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-compass-drafting text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Carefully Curated Pieces</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Strict editorial selection ensuring every single suit is a masterpiece of craftsmanship.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-scissors text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Luxury Embroidery</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">High density needlework, scalloped borders, and pristine structural finish.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Comfort Meets Style</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Breathable and gentle next-to-skin weaves built for beautiful everyday luxury.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Trusted Quality</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Dedicated to pristine customer support, secure packaging, and verified materials.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
+                            <i class="fa-solid fa-crown text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-serif tracking-wide text-priyaraText dark:text-white font-semibold">Limited Edition Collections</h3>
+                        <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Highly exclusive capsule drops ensuring unique, non-repetitive attire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Voices of Elegance</span>
+                <h2 class="text-2xl sm:text-3xl font-serif tracking-widest text-priyaraText dark:text-white font-medium">
+                    Client Journals
+                </h2>
+                <div class="w-12 h-[1px] bg-priyaraGold mx-auto my-2"></div>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="relative w-full overflow-hidden px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="reviewsContainer">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-1 text-priyaraGold">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                            </div>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
+                                "PRIYARA has elevated my wardrobe completely. The embroidery detailing is as fine as global couture lines, and the customer service made me feel incredibly valued. Absolute perfection!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-xs font-semibold text-priyaraText dark:text-white">Zainab Rahman</h4>
+                                <span class="text-[10px] text-stone-400">Dhaka</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest text-priyaraGold font-bold">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-1 text-priyaraGold">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                            </div>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
+                                "The Royal Magenta collection is breathtaking! The fabric and pure luxurious feel are unmatched. Shipping to Sylhet was seamless, arriving in beautiful luxury boxes."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-xs font-semibold text-priyaraText dark:text-white">Sultana Ahmed</h4>
+                                <span class="text-[10px] text-stone-400">Sylhet</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest text-priyaraGold font-bold">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-1 text-priyaraGold">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                            </div>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
+                                "Truly a premium experience. The fabric quality, packaging, and attention to detail in the embroidery borders exceed standard boutique brands. A classic luxury find."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-xs font-semibold text-priyaraText dark:text-white">Dr. Farah Kabir</h4>
+                                <span class="text-[10px] text-stone-400">Chittagong</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest text-priyaraGold font-bold">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-1 text-priyaraGold">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                            </div>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
+                                "Extremely lightweight yet majestically elegant. PRIYARA offers incredible luxurious drapes. The White Elegance dress received dozens of compliments."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-xs font-semibold text-priyaraText dark:text-white">Mariam Chowdhury</h4>
+                                <span class="text-[10px] text-stone-400">Dhaka</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest text-priyaraGold font-bold">Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Style Gallery section -->
+        <section id="instagram" class="py-20 bg-[#F7F5F2] dark:bg-zinc-950 border-t border-priyaraGray dark:border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-3 mb-16">
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Digital Inspiration</span>
+                    <h2 class="text-2xl sm:text-3xl font-serif tracking-widest text-priyaraText dark:text-white">
+                        The Instagram Edit
+                    </h2>
+                    <p class="text-xs text-stone-400 font-medium">Join our journey online and explore curated perspectives</p>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <button onclick="openFullscreenImg('whitemain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
+                        <img src="whitemain.jpg" alt="White Elegance lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
+                        </div>
+                    </button>
+                    <button onclick="openFullscreenImg('pinkmain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
+                        <img src="pinkmain.jpg" alt="Rose Pink lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
+                        </div>
+                    </button>
+                    <button onclick="openFullscreenImg('skymain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
+                        <img src="skymain.jpg" alt="Sky Blue Grace lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
+                        </div>
+                    </button>
+                    <button onclick="openFullscreenImg('seagreenmain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
+                        <img src="seagreenmain.jpg" alt="Deep Sea Green lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions section -->
+        <section id="faq" class="py-24 max-w-4xl mx-auto px-4">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Shopping Guidance</span>
+                <h2 class="text-2xl sm:text-3xl font-serif tracking-widest text-priyaraText dark:text-white font-medium">
+                    Client Queries
+                </h2>
+                <div class="w-12 h-[1px] bg-priyaraGold mx-auto my-2"></div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 rounded-2xl p-6 transition-all shadow-sm">
+                    <button onclick="toggleAccordion(0)" class="w-full flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-serif font-semibold text-sm sm:text-base text-priyaraText dark:text-white">
+                            What are the delivery areas and costs?
+                        </span>
+                        <i id="faq-icon-0" class="fa-solid fa-chevron-down text-priyaraGold transition-transform duration-350"></i>
+                    </button>
+                    <p id="faq-ans-0" class="hidden mt-4 text-xs text-stone-500 dark:text-stone-400 leading-relaxed border-t border-priyaraGray/40 dark:border-zinc-800 pt-4">
+                        We offer robust Home Delivery available across Bangladesh. Estimated delivery takes 2–5 business days, and Cash on Delivery option is fully supported.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 rounded-2xl p-6 transition-all shadow-sm">
+                    <button onclick="toggleAccordion(1)" class="w-full flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-serif font-semibold text-sm sm:text-base text-priyaraText dark:text-white">
+                            What fabric standards does PRIYARA use for its designs?
+                        </span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-priyaraGold transition-transform duration-350"></i>
+                    </button>
+                    <p id="faq-ans-1" class="hidden mt-4 text-xs text-stone-500 dark:text-stone-400 leading-relaxed border-t border-priyaraGray/40 dark:border-zinc-800 pt-4">
+                        Depending on the collection item, we feature Premium Egyptian Cotton lawn and Premium Georgette fabric bases. Each features custom luxury embroidery, comfortable finishes, and is highly soft & breathable.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 rounded-2xl p-6 transition-all shadow-sm">
+                    <button onclick="toggleAccordion(2)" class="w-full flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-serif font-semibold text-sm sm:text-base text-priyaraText dark:text-white">
+                            What is your return and exchange policy?
+                        </span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-priyaraGold transition-transform duration-350"></i>
+                    </button>
+                    <p id="faq-ans-2" class="hidden mt-4 text-xs text-stone-500 dark:text-stone-400 leading-relaxed border-t border-priyaraGray/40 dark:border-zinc-800 pt-4">
+                        Exchange is available for eligible cases according to PRIYARA's policy. Simply notify our digital concierge or styling staff within 3 days of delivery.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 rounded-2xl p-6 transition-all shadow-sm">
+                    <button onclick="toggleAccordion(3)" class="w-full flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-serif font-semibold text-sm sm:text-base text-priyaraText dark:text-white">
+                            How should I care for my premium three-piece?
+                        </span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-priyaraGold transition-transform duration-350"></i>
+                    </button>
+                    <p id="faq-ans-3" class="hidden mt-4 text-xs text-stone-500 dark:text-stone-400 leading-relaxed border-t border-priyaraGray/40 dark:border-zinc-800 pt-4">
+                        We recommend hand wash with mild detergents. Do not bleach. Dry in shade and iron at a low temperature setting to maintain structural embroidery shape.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-[#F7F5F2] dark:bg-zinc-950 border-t border-priyaraGray dark:border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="space-y-3">
+                            <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-semibold">Concierge Desk</span>
+                            <h2 class="text-3xl sm:text-4xl font-serif tracking-widest text-priyaraText dark:text-white leading-tight">
+                                Get In Touch
+                            </h2>
+                            <p class="text-sm text-stone-500 leading-relaxed font-serif">
+                                Have questions about our collections or need styling assistance? We're always happy to help.
+                            </p>
+                        </div>
+
+                        <!-- Direct Contacts -->
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 bg-white dark:bg-zinc-900 rounded-xl shadow-sm text-priyaraGold">
+                                    <i class="fa-regular fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] text-stone-400 uppercase tracking-wider">Email Correspondence</span>
+                                    <a href="mailto:contact@priyarabd.com" class="font-medium text-priyaraText dark:text-white hover:text-priyaraGold">contact@priyarabd.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 bg-white dark:bg-zinc-900 rounded-xl shadow-sm text-priyaraGold">
+                                    <i class="fa-solid fa-map-pin text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] text-stone-400 uppercase tracking-wider">Atelier Boutique Head Office</span>
+                                    <span class="font-medium text-priyaraText dark:text-white">Dhaka, Bangladesh</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Touch Points -->
+                        <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                            <a href="https://wa.me/8801700000000" target="_blank" class="px-6 py-3.5 bg-emerald-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-emerald-700 transition-all text-center">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Message Us</span>
+                            </a>
+                            <a href="https://facebook.com/PRIYARA" target="_blank" class="px-6 py-3.5 border border-priyaraGold text-priyaraText dark:text-stone-100 rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-priyaraGold hover:text-white transition-all text-center">
+                                <i class="fa-brands fa-facebook-messenger text-sm"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Google Map embedded elegantly -->
+                    <div class="lg:col-span-7 bg-white dark:bg-zinc-900 p-4 rounded-3xl shadow-lg border border-priyaraGray dark:border-zinc-850">
+                        <div class="relative aspect-video rounded-2xl overflow-hidden bg-stone-100 dark:bg-zinc-950 flex flex-col items-center justify-center text-center p-6 border border-priyaraGray dark:border-zinc-800">
+                            <i class="fa-solid fa-map-location-dot text-4xl text-priyaraGold mb-3 animate-bounce"></i>
+                            <h4 class="font-serif text-lg tracking-wide text-priyaraText dark:text-white">PRIYARA Atelier Location Map</h4>
+                            <p class="text-xs text-stone-450 max-w-sm mt-2">Open everyday from 11:00 AM to 10:00 PM in Dhaka, Bangladesh.</p>
+                            <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-25 pointer-events-none" style="background-image: url('whitemain.jpg')"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Detailed Product View (Hidden by default, loaded via details toggle) -->
+    <section id="productDetailView" class="hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <button onclick="navigateTo('home')" class="group text-[11px] uppercase tracking-[0.25em] text-priyaraText/60 dark:text-stone-300 hover:text-priyaraGold flex items-center gap-2 transition-colors">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Back to Masterpieces</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Gallery Grid Column (Left) -->
+            <div class="lg:col-span-7 space-y-4">
+                <div class="relative aspect-[3/4] bg-priyaraSec dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-lg zoom-img-container" id="detailMainImgContainer">
+                    <img id="detailMainImg" src="" alt="Detail visual" class="w-full h-full object-cover object-top zoom-img">
+                    <button onclick="openFullscreenImgFromDetails()" class="absolute bottom-4 left-4 bg-white/80 dark:bg-zinc-950/80 p-3 rounded-full hover:scale-105 active:scale-95 transition-all text-priyaraText dark:text-white">
+                        <i class="fa-solid fa-expand text-sm"></i>
+                    </button>
+                </div>
+
+                <!-- Thumbnail Switcher Panel -->
+                <div class="flex items-center gap-3 overflow-x-auto py-2" id="detailThumbnails">
+                    <!-- Loaded dynamically via script -->
+                </div>
+            </div>
+
+            <!-- Context Details Column (Right) -->
+            <div class="lg:col-span-5 space-y-8">
+                <div class="space-y-4 border-b border-priyaraGray dark:border-zinc-800 pb-6">
+                    <span id="detailAvailability" class="text-[9px] uppercase tracking-[0.3em] font-semibold text-priyaraGold bg-priyaraGold/10 px-3 py-1.5 rounded-full">In Stock</span>
+
+                    <h1 id="detailName" class="text-3xl sm:text-4xl font-serif tracking-wide text-priyaraText dark:text-white leading-tight"></h1>
+
+                    <div class="flex items-baseline space-x-4">
+                        <span id="detailPrice" class="text-2xl font-serif font-bold text-priyaraGold"></span>
+                        <span class="text-[10px] text-stone-400 tracking-wider font-semibold uppercase">Complete Three-Piece Suit</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-priyaraText dark:text-stone-350">Atelier Editorial Vision</h3>
+                    <p id="detailDesc" class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed font-serif italic"></p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 bg-priyaraSec dark:bg-zinc-900 p-5 rounded-2xl border border-priyaraGray dark:border-zinc-800 text-xs">
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-wider text-stone-400 mb-1">Authentic Fabric</span>
+                        <span id="detailFabric" class="font-medium text-stone-850 dark:text-stone-100"></span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-wider text-stone-400 mb-1">Status Class</span>
+                        <span id="detailCategory" class="font-medium text-stone-850 dark:text-stone-100"></span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-[11px] uppercase tracking-[0.2em] font-bold text-priyaraText dark:text-stone-200">Suite Features</h3>
+                    <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-2" id="detailFeatures">
+                        <!-- Loaded dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Purchase Buttons -->
+                <div class="space-y-4 pt-4">
+                    <button id="detailBuyBtn" onclick="addItemToCartFromDetails()" class="w-full py-4 bg-[#111111] dark:bg-zinc-900 text-white hover:bg-white dark:hover:bg-priyaraGold hover:text-[#111111] dark:hover:text-white hover:shadow-lg border border-[#111111] dark:border-transparent rounded-xl transition-all duration-300 text-xs uppercase tracking-[0.25em] font-bold">
+                        Order Now
+                    </button>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <a id="detailWAMsgBtn" href="" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Message Us</span>
+                        </a>
+
+                        <a id="detailMessengerBtn" href="https://facebook.com/PRIYARA" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-priyaraGold hover:bg-[#D9B97A] text-white rounded-xl text-xs font-bold transition-all">
+                            <i class="fa-brands fa-facebook-messenger text-base"></i>
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+
+                    <button onclick="copyAddressLink()" class="w-full py-3 border border-priyaraGray dark:border-zinc-800 hover:border-priyaraGold text-[11px] uppercase tracking-wider text-priyaraText/70 dark:text-stone-300 rounded-lg transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-share-nodes text-xs"></i>
+                        <span>Share Silk Inspiration Address</span>
+                    </button>
+                </div>
+
+                <!-- Specifications Accordion -->
+                <div class="border-t border-priyaraGray dark:border-zinc-800 pt-6 space-y-3">
+                    <div class="border-b border-priyaraGray dark:border-zinc-800 pb-3">
+                        <button onclick="toggleDetailsAccordion(0)" class="w-full flex items-center justify-between py-2 text-xs uppercase tracking-widest font-semibold text-priyaraText dark:text-stone-200">
+                            <span>Sizing & Fabric Details</span>
+                            <i id="detail-faq-icon-0" class="fa-solid fa-chevron-down text-priyaraText/40 dark:text-stone-500"></i>
+                        </button>
+                        <p id="detail-faq-ans-0" class="hidden mt-2 text-xs text-stone-500 dark:text-stone-400 leading-relaxed pl-1">
+                            Unstitched traditional standard proportions: Shirt Fabric (3.25 Yards), Trouser Fabric (2.5 Yards), Dupatta (2.75 Yards). Built with extreme stitch parameters allowing custom boutique tailoring.
+                        </p>
+                    </div>
+
+                    <div class="border-b border-priyaraGray dark:border-zinc-800 pb-3">
+                        <button onclick="toggleDetailsAccordion(1)" class="w-full flex items-center justify-between py-2 text-xs uppercase tracking-widest font-semibold text-priyaraText dark:text-stone-200">
+                            <span>Atelier Care Instructions</span>
+                            <i id="detail-faq-icon-1" class="fa-solid fa-chevron-down text-priyaraText/40 dark:text-stone-500"></i>
+                        </button>
+                        <ul id="detail-faq-ans-1" class="hidden mt-2 text-xs text-stone-500 dark:text-stone-400 list-disc pl-5 space-y-1">
+                            <li>Hand wash recommended</li>
+                            <li>Use mild detergent</li>
+                            <li>Do not bleach</li>
+                            <li>Iron at low temperature</li>
+                            <li>Dry in shade</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-b border-priyaraGray dark:border-zinc-800 pb-3">
+                        <button onclick="toggleDetailsAccordion(2)" class="w-full flex items-center justify-between py-2 text-xs uppercase tracking-widest font-semibold text-priyaraText dark:text-stone-200">
+                            <span>Delivery Information</span>
+                            <i id="detail-faq-icon-2" class="fa-solid fa-chevron-down text-priyaraText/40 dark:text-stone-500"></i>
+                        </button>
+                        <p id="detail-faq-ans-2" class="hidden mt-2 text-xs text-stone-500 dark:text-stone-400 leading-relaxed pl-1">
+                            Home Delivery Available Across Bangladesh. Estimated delivery time is 2-5 business days. Cash on Delivery is fully supported.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Recently Viewed Section -->
+                <div class="border-t border-priyaraGray dark:border-zinc-800 pt-8 space-y-4">
+                    <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-priyaraText dark:text-stone-200">Recently Viewed</h3>
+                    <div id="recentlyViewedContainer" class="flex gap-4 overflow-x-auto py-2">
+                        <!-- Populated via script -->
+                    </div>
+                </div>
+
+                <!-- Related Products Section -->
+                <div class="border-t border-priyaraGray dark:border-zinc-800 pt-8 space-y-4">
+                    <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-priyaraText dark:text-stone-200">Related Products</h3>
+                    <div id="relatedProductsContainer" class="grid grid-cols-2 gap-4">
+                        <!-- Populated via script -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mock 404 Section -->
+    <section id="error404View" class="hidden min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
+        <div class="max-w-md space-y-6">
+            <h1 class="text-8xl font-serif tracking-widest text-priyaraGold">404</h1>
+            <h2 class="text-2xl font-serif italic text-priyaraText dark:text-stone-100">Oops!</h2>
+            <p class="text-sm text-stone-500 leading-relaxed font-serif">
+                This page seems to have slipped away. Let's take you back to elegance.
+            </p>
+            <div class="pt-4">
+                <button onclick="navigateTo('home')" class="px-8 py-4 bg-[#111111] text-white hover:bg-white hover:text-[#111111] border border-[#111111] rounded-full text-xs uppercase tracking-[0.25em] font-bold transition-all duration-300 shadow-sm">
+                    Back to Home
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Brand Footer -->
+    <footer class="bg-[#111111] text-stone-450 border-t border-priyaraGold/20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-stone-850">
+            
+            <div class="space-y-4">
+                <img src="ChatGPT Image Jun 21, 2026, 06_29_23 PM.png" alt="PRIYARA Footer Logo" class="h-16 w-auto object-contain bg-white rounded-xl p-2 shadow-sm mb-4">
+                <p class="text-[11px] uppercase tracking-wider text-priyaraGold font-bold">
+                    Where Elegance Meets Comfort.
+                </p>
+                <p class="text-xs leading-relaxed text-stone-400">
+                    PRIYARA offers elegant and premium-quality Pakistani-inspired women's fashion collections designed for modern women who appreciate timeless beauty, luxurious craftsmanship, and everyday elegance.
+                </p>
+            </div>
+
+            <div class="space-y-3 text-xs">
+                <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><button onclick="navigateTo('home')" class="hover:text-white transition-colors">Home</button></li>
+                    <li><a href="#featured" class="hover:text-white transition-colors">Collections</a></li>
+                    <li><a href="#promise" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3 text-xs">
+                <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Follow Us</h3>
+                <ul class="space-y-2">
+                    <li><a href="https://facebook.com/PRIYARA" target="_blank" class="hover:text-white transition-colors">Facebook: PRIYARA</a></li>
+                    <li><a href="https://instagram.com/priyara.bd" target="_blank" class="hover:text-white transition-colors font-semibold text-priyaraGold">Instagram: @priyara.bd</a></li>
+                    <li><span class="text-stone-550 block">Dhaka, Bangladesh</span></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="uppercase tracking-[0.2em] text-xs font-semibold text-white font-serif">Join the PRIYARA Community</h3>
+                <p class="text-xs text-stone-400">Subscribe to receive exclusive collection launches, styling inspiration, and special offers.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email address..." class="bg-stone-900 border border-stone-800 px-4 py-2.5 text-xs text-white rounded-l w-full focus:outline-none focus:border-priyaraGold">
+                    <button onclick="triggerToast('Thank you for subscribing to PRIYARA.')" class="bg-priyaraGold text-white px-4 py-2.5 text-xs uppercase tracking-widest rounded-r font-bold hover:bg-[#D9B97A]">
+                        Join
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500">
+            <p>© 2026 PRIYARA. All Rights Reserved. Designed with elegance.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <span class="text-stone-650 hover:text-stone-400 cursor-pointer">Privacy Policy</span>
+                <span class="text-stone-650 hover:text-stone-400 cursor-pointer">Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Wishlist Sidebar Drawer -->
+    <div id="wishlistSidebar" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-white dark:bg-zinc-950 w-full max-w-md h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[100%] transition-transform duration-300" id="wishlistSidebarContainer">
+            <button onclick="toggleWishlistSidebar(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-all">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex-grow mt-12 overflow-y-auto">
+                <div class="flex items-center gap-2 border-b border-stone-100 dark:border-zinc-900 pb-4">
+                    <i class="fa-solid fa-heart text-priyaraGold"></i>
+                    <h2 class="text-lg font-serif tracking-widest text-priyaraText dark:text-white uppercase">Your Wishlist</h2>
+                </div>
+
+                <div id="wishlistItems" class="space-y-6 pt-6">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide-out Shopping Bag Cart Sidebar -->
+    <div id="cartSidebar" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-white dark:bg-zinc-950 w-full max-w-md h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[100%] transition-transform duration-300" id="cartSidebarContainer">
+            <button onclick="toggleCartSidebar(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-all">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex-grow mt-12 overflow-y-auto">
+                <div class="flex items-center gap-2 border-b border-stone-100 dark:border-zinc-900 pb-4">
+                    <i class="fa-solid fa-bag-shopping text-priyaraGold"></i>
+                    <h2 class="text-lg font-serif tracking-widest text-priyaraText dark:text-white uppercase font-semibold">Your Orders</h2>
+                </div>
+
+                <div id="cartItems" class="space-y-6 pt-6">
+                    <!-- Dynamically filled with products -->
+                </div>
+            </div>
+
+            <!-- Dynamic Pricing and Checkout Trigger footer -->
+            <div class="border-t border-stone-100 dark:border-zinc-900 pt-6 space-y-4" id="cartFooter">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase tracking-widest font-semibold text-priyaraText dark:text-stone-300">Total Order Value:</span>
+                    <span id="cartTotal" class="font-serif text-lg text-priyaraGold font-bold">৳0</span>
+                </div>
+
+                <button onclick="checkoutViaWhatsApp()" class="w-full block text-center py-4 bg-emerald-600 hover:bg-emerald-750 text-white rounded-xl text-xs uppercase tracking-widest font-bold transition-all shadow-lg">
+                    Order Now via WhatsApp
+                </button>
+
+                <p class="text-[10px] text-stone-400 text-center italic font-serif">
+                    A styling representative will verify unstitched dimensions and dispatch luxury packages across Bangladesh.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Quick View Modal popup -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm p-4 hidden">
+        <div class="bg-white dark:bg-zinc-900 w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative grid grid-cols-1 md:grid-cols-2">
+            
+            <button onclick="toggleQuickViewModal(false)" class="absolute top-4 right-4 z-10 p-2.5 text-stone-700 dark:text-stone-200 bg-white/80 dark:bg-zinc-950/80 rounded-full focus:outline-none hover:text-priyaraGold transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="aspect-[3/4] bg-priyaraSec dark:bg-zinc-950 relative">
+                <img id="quickViewImg" src="" alt="Masterpiece preview" class="w-full h-full object-cover object-top">
+            </div>
+
+            <div class="p-8 flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <span id="quickViewCat" class="text-[9px] uppercase tracking-[0.3em] font-semibold text-priyaraGold bg-priyaraGold/10 px-3 py-1 rounded-full"></span>
+                    <h3 id="quickViewName" class="font-serif text-2xl tracking-wide text-priyaraText dark:text-white"></h3>
+                    <span id="quickViewPrice" class="text-xl font-serif text-priyaraGold font-bold"></span>
+                    <p id="quickViewDesc" class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed font-serif italic"></p>
+                </div>
+
+                <div class="space-y-3">
+                    <button id="quickViewAddBtn" onclick="addItemToCartFromQuickView()" class="w-full py-3.5 bg-[#111111] hover:bg-priyaraGold text-white transition-colors rounded-xl text-xs uppercase tracking-widest font-bold">
+                        Order Now
+                    </button>
+                    <button id="quickViewDetailBtn" class="w-full py-3.5 border border-priyaraGold text-priyaraText dark:text-stone-200 hover:bg-priyaraGold hover:text-white transition-all rounded-xl text-xs uppercase tracking-widest font-bold">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Image Fullscreen Lightbox Frame -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4" onclick="toggleLightbox(false, '')">
+        <button class="absolute top-6 right-6 text-white hover:text-priyaraGold p-3 focus:outline-none">
+            <i class="fa-solid fa-xmark text-3xl"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="Expanded View representation" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Notification Toast alerts -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#111111] text-white border border-priyaraGold px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 hidden transition-all max-w-sm">
+        <i class="fa-solid fa-sparkles text-priyaraGold animate-pulse"></i>
+        <span id="toastMsg" class="text-xs font-medium tracking-wide"></span>
+    </div>
+
+    <!-- Floating Direct Assistance Buttons -->
+    <div class="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
+        <!-- Scroll State Back to top -->
+        <button id="backToTop" onclick="scrollToTop()" class="bg-[#111111] border border-priyaraGold/40 text-white p-3.5 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 hover:bg-priyaraGold">
+            <i class="fa-solid fa-arrow-up text-sm"></i>
+        </button>
+
+        <!-- Floating WhatsApp concierge -->
+        <a href="https://wa.me/8801700000000" target="_blank" class="bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center animate-pulse" aria-label="WhatsApp help desk">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Complete Javascript Mechanics Block -->
+    <script>
+        // Core Database: 8 Signature Collections conforming exactly to product criteria
+        const BRAND_PRODUCTS = [
+            {
+                id: 'white-elegance',
+                name: 'White Elegance',
+                price: 1950,
+                category: 'Premium Cotton Three-Piece',
+                availability: 'In Stock - Limited Edition',
+                mainImage: 'whitemain.jpg',
+                images: ['whitemain.jpg', 'white1.jpg', 'white2.jpg', 'white3.jpg', 'white4.jpg'],
+                description: 'White Elegance is a timeless Pakistani-inspired three-piece crafted from premium cotton. Featuring elegant embroidery and refined detailing, this collection offers a graceful look with exceptional comfort, making it perfect for festive gatherings, family occasions, and everyday elegance.',
+                fabric: 'Premium Cotton Fabric',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Cotton Fabric',
+                    'Elegant Embroidery',
+                    'Soft & Breathable',
+                    'Comfortable All-Day Wear',
+                    'Matching Dupatta',
+                    'Limited Collection'
+                ]
+            },
+            {
+                id: 'rose-pink',
+                name: 'Rose Pink',
+                price: 1950,
+                category: 'Premium Cotton Three-Piece',
+                availability: 'In Stock',
+                mainImage: 'pinkmain.jpg',
+                images: ['pinkmain.jpg', 'pink1.jpg', 'pink2.jpg', 'pink3.jpg', 'pink4.jpg', 'pink5.jpg'],
+                description: 'Rose Pink combines femininity and sophistication with delicate embroidery and premium cotton fabric. Designed for women who appreciate effortless elegance and comfort.',
+                fabric: 'Premium Cotton',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Cotton',
+                    'Elegant Embroidery',
+                    'Lightweight & Breathable',
+                    'Comfortable Fit',
+                    'Pakistani Inspired Design'
+                ]
+            },
+            {
+                id: 'sky-blue-grace',
+                name: 'Sky Blue Grace',
+                price: 1950,
+                category: 'Premium Cotton Three-Piece',
+                availability: 'In Stock',
+                mainImage: 'skymain.jpg',
+                images: ['skymain.jpg', 'sky1.jpg', 'sky2.jpg', 'sky3.jpg', 'sky4.jpg'],
+                description: 'A refreshing sky blue ensemble crafted with premium cotton and graceful embroidery. Perfect for casual luxury and special occasions.',
+                fabric: 'Premium Cotton',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Cotton',
+                    'Soft Fabric',
+                    'Elegant Embroidery',
+                    'Lightweight',
+                    'Premium Finish'
+                ]
+            },
+            {
+                id: 'deep-sea-green',
+                name: 'Deep Sea Green',
+                price: 1950,
+                category: 'Premium Cotton Three-Piece',
+                availability: 'In Stock',
+                mainImage: 'seagreenmain.jpg',
+                images: ['seagreenmain.jpg', 'seagreen1.jpg', 'seagreen2.jpg', 'seagreen3.jpg', 'seagreen4.jpg'],
+                description: 'Deep Sea Green showcases rich color tones with luxurious embroidery and premium cotton fabric, creating a sophisticated yet comfortable outfit.',
+                fabric: 'Premium Cotton',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Cotton',
+                    'Breathable Fabric',
+                    'Luxury Embroidery',
+                    'Elegant Design'
+                ]
+            },
+            {
+                id: 'Deep-Magenta',
+                name: 'Deep-Magenta',
+                price: 1750,
+                category: 'Premium Georgette Three-Piece',
+                availability: 'Highly Demanded',
+                mainImage: 'deepmagentamain.jpg',
+                images: ['deepmagentamain.jpg', 'deepmagenta6.jpg', 'deepmagentamain1.jpg', 'deepmagentamain2.jpg'],
+                description: 'Deep-Magenta is crafted from premium Georgette fabric with luxurious embroidery, offering a refined and graceful look that\'s perfect for evening events and festive occasions.',
+                fabric: 'Premium Georgette Fabric',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Georgette Fabric',
+                    'Elegant Embroidery',
+                    'Lightweight',
+                    'Flowing Dupatta',
+                    'Premium Finish'
+                ]
+            },
+            {
+                id: 'Taupe',
+                name: 'Taupe',
+                price: 1750,
+                category: 'Premium Georgette Three-Piece',
+                availability: 'In Stock',
+                mainImage: 'taupemain.jpg',
+                images: ['taupemain.jpg', 'taupe2.jpg', 'taupe3.jpg', 'taupe5.jpg', 'taupe7.jpg'],
+                description: 'Taupe blends elegance with modern sophistication. The premium Georgette fabric drapes beautifully, while delicate embroidery adds a luxurious finish.',
+                fabric: 'Premium Georgette',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Georgette',
+                    'Elegant Embroidery',
+                    'Soft & Lightweight',
+                    'Luxury Finish'
+                ]
+            },
+            {
+                id: 'Yellow',
+                name: 'Yellow',
+                price: 1750,
+                category: 'Premium Georgette Three-Piece',
+                availability: 'Limited Edition',
+                mainImage: 'yellowmain.jpg',
+                images: ['yellowmain.jpg', 'yellow1.jpg', 'yellow2.jpg', 'yellow4.jpg', 'yellow5.jpg', 'yellow6.jpg'],
+                description: 'Yell offers a graceful and minimalist luxury look with premium Georgette fabric and elegant detailing. Designed for women who appreciate timeless beauty.',
+                fabric: 'Premium Georgette',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Georgette',
+                    'Elegant Design',
+                    'Lightweight',
+                    'Comfortable Wear'
+                ]
+            },
+            {
+                id: 'royal-magenta',
+                name: 'Royal Magenta',
+                price: 1750,
+                category: 'Premium Georgette Three-Piece',
+                availability: 'In Stock',
+                mainImage: 'Magentamain.jpg',
+                images: ['Magentamain.jpg', 'Magenta1.jpg', 'Magenta2.jpg', 'Magenta3.jpg'],
+                description: 'Royal Magenta is a bold and elegant three-piece featuring premium Georgette fabric, refined embroidery, and a luxurious finish that stands out on every occasion.',
+                fabric: 'Premium Georgette',
+                care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
+                features: [
+                    'Premium Georgette',
+                    'Luxury Embroidery',
+                    'Elegant Finish',
+                    'Lightweight Fabric'
+                ]
+            }
+        ];
+
+        // User State Handlers
+        let wishlist = [];
+        let cart = [];
+        let recentlyViewed = [];
+        let currentFilter = 'All';
+        let detailActiveImgIndex = 0;
+        let selectedProductForDetails = null;
+
+        // Custom typewriter sequencing
+        const typingSentences = [
+            "Premium Women's Fashion",
+            "Pakistani Inspired Collection",
+            "Elegant Three-Piece Collection",
+            "Designed For Every Occasion",
+            "Luxury You Can Wear",
+            "Limited Premium Collection",
+            "Grace in Every Stitch",
+            "Where Elegance Meets Comfort"
+        ];
+        let sentenceIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Loader timeout mechanics
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.classList.add('opacity-0');
+                setTimeout(() => loader.style.display = 'none', 750);
+            }, 1800);
+
+            // Populate the main catalog layout grid
+            renderProducts();
+            
+            // Initiate standard animation loops
+            typeWriter();
+            generateFloatingParticles();
+        });
+
+        // Track user scroll progression state
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            document.getElementById("progressBar").style.width = scrolled + "%";
+
+            // Toggle floating return to top button
+            const backBtn = document.getElementById('backToTop');
+            if (winScroll > 400) {
+                backBtn.classList.remove('opacity-0');
+                backBtn.classList.add('opacity-100');
+            } else {
+                backBtn.classList.add('opacity-0');
+                backBtn.classList.remove('opacity-100');
+            }
+        });
+
+        // Dynamic typing marquee animations
+        function typeWriter() {
+            const typingTextElem = document.getElementById('typingText');
+            if (!typingTextElem) return;
+
+            const currentStr = typingSentences[sentenceIndex];
+
+            if (!isDeleting) {
+                typingTextElem.innerHTML = currentStr.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentStr.length) {
+                    isDeleting = true;
+                    typingSpeed = 2200; // Pause at completion state
+                } else {
+                    typingSpeed = 70;
+                }
+            } else {
+                typingTextElem.innerHTML = currentStr.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    sentenceIndex = (sentenceIndex + 1) % typingSentences.length;
+                    typingSpeed = 600; // Delay before starting next line
+                } else {
+                    typingSpeed = 35;
+                }
+            }
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        // Generate gold vectors inside Hero background
+        function generateFloatingParticles() {
+            const particleContainer = document.getElementById('heroParticles');
+            if (!particleContainer) return;
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 8 + 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                particle.style.animationDuration = `${Math.random() * 8 + 12}s`;
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        // Render main catalog cards with category parameters
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const filtered = BRAND_PRODUCTS.filter(item => {
+                if (currentFilter === 'All') return true;
+                return item.category === currentFilter;
+            });
+
+            filtered.forEach(product => {
+                const isFavorite = wishlist.includes(product.id);
+                const displayPrice = `৳${product.price.toLocaleString()}`;
+
+                const card = `
+                    <div class="group flex flex-col justify-between h-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 relative">
+                        <div class="relative overflow-hidden aspect-[3/4] bg-[#F7F5F2] dark:bg-zinc-800 rounded-xl">
+                            <!-- Image Hover Zoom Strategy -->
+                            <img src="${product.mainImage}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                            
+                            <span class="absolute top-4 left-4 bg-white/80 dark:bg-black/75 backdrop-blur-md text-[9px] uppercase tracking-[0.25em] text-[#C9A86A] px-3 py-1 rounded-full font-semibold border border-white/20">
+                                ${product.category}
+                            </span>
+
+                            <button onclick="toggleWishlist('${product.id}')" class="absolute top-4 right-4 bg-white dark:bg-zinc-900 p-2.5 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all text-stone-400 hover:text-[#C9A86A]" aria-label="Add to wishlist">
+                                <i class="${isFavorite ? 'fa-solid' : 'fa-regular'} fa-heart text-sm ${isFavorite ? 'text-[#C9A86A]' : ''}"></i>
+                            </button>
+
+                            <!-- Hover Overlay Visual Strategy -->
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col gap-2 justify-end">
+                                <button onclick="openQuickView('${product.id}')" class="bg-white hover:bg-priyaraGold hover:text-white text-[10px] text-priyaraText font-semibold py-3 uppercase tracking-widest rounded transition-all duration-300">
+                                    Quick View
+                                </button>
+                                <button onclick="displayProductDetails('${product.id}')" class="border border-white/60 bg-transparent hover:bg-white text-white hover:text-[#111111] text-[10px] font-semibold py-3 uppercase tracking-widest rounded transition-all duration-300">
+                                    View Details
+                                </button>
+                            </div>
+
+                            <!-- Mobile Direct view helper -->
+                            <div class="absolute bottom-3 left-3 md:hidden">
+                                <button onclick="displayProductDetails('${product.id}')" class="bg-white/95 backdrop-blur-sm text-[8px] uppercase tracking-widest text-[#111111] px-3 py-2 rounded-full font-bold shadow-md">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card text metadata -->
+                        <div class="pt-4 pb-2 px-3 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h3 class="font-serif text-lg sm:text-xl tracking-wide text-priyaraText dark:text-white group-hover:text-priyaraGold transition-colors duration-300">${product.name}</h3>
+                                <p class="text-[10px] text-stone-400 dark:text-stone-500 uppercase tracking-widest mt-1">${product.fabric}</p>
+                            </div>
+                            <div class="flex items-center justify-between mt-3 pt-3 border-t border-[#ECECEC] dark:border-zinc-800">
+                                <span class="font-serif text-base sm:text-lg font-bold text-priyaraGold">${displayPrice}</span>
+                                <button onclick="addToCart('${product.id}')" class="text-[10px] uppercase tracking-widest text-[#111111] dark:text-stone-300 hover:text-priyaraGold font-bold transition-colors flex items-center gap-1">
+                                    <span>Order Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Category filter click handler
+        function filterCategory(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.className = "cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent";
+            });
+            
+            const activeId = cat === 'Premium Cotton Three-Piece' ? 'cat-Cotton' : cat === 'Premium Georgette Three-Piece' ? 'cat-Georgette' : 'cat-All';
+            const activeBtn = document.getElementById(activeId);
+            if (activeBtn) {
+                activeBtn.className = "cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-[#111111] text-white border border-[#111111]";
+            }
+            renderProducts();
+        }
+
+        // Accordion collapsible logic
+        function toggleAccordion(index) {
+            const ans = document.getElementById(`faq-ans-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            if (!ans || !icon) return;
+
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Product Details window accordions
+        function toggleDetailsAccordion(index) {
+            const ans = document.getElementById(`detail-faq-ans-${index}`);
+            const icon = document.getElementById(`detail-faq-icon-${index}`);
+            if (!ans || !icon) return;
+
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180', 'text-priyaraGold');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180', 'text-priyaraGold');
+            }
+        }
+
+        // Mobile Menu Drawer Handles
+        function toggleMobileMenu(open) {
+            const menu = document.getElementById('mobileMenu');
+            const container = document.getElementById('mobileMenuContainer');
+            if (open) {
+                menu.classList.remove('hidden');
+                setTimeout(() => container.style.transform = 'translateX(0)', 50);
+            } else {
+                container.style.transform = 'translateX(-100%)';
+                setTimeout(() => menu.classList.add('hidden'), 300);
+            }
+        }
+
+        // Search Overlay filters
+        function toggleSearchOverlay(open) {
+            const overlay = document.getElementById('searchOverlay');
+            if (open) {
+                overlay.classList.remove('hidden');
+                document.getElementById('searchInput').focus();
+            } else {
+                overlay.classList.add('hidden');
+                document.getElementById('searchInput').value = '';
+                document.getElementById('searchResults').innerHTML = '';
+            }
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = '';
+
+            if (query.trim() === '') return;
+
+            const matches = BRAND_PRODUCTS.filter(p => 
+                p.name.toLowerCase().includes(query) || 
+                p.description.toLowerCase().includes(query) ||
+                p.fabric.toLowerCase().includes(query)
+            );
+
+            if (matches.length === 0) {
+                resultsDiv.innerHTML = `<p class="text-xs text-stone-400 font-serif italic text-center w-full col-span-2">No matching masterpieces found.</p>`;
+                return;
+            }
+
+            matches.forEach(product => {
+                resultsDiv.innerHTML += `
+                    <div onclick="toggleSearchOverlay(false); displayProductDetails('${product.id}')" class="flex gap-4 items-center bg-stone-50 dark:bg-zinc-900 p-3 rounded-xl border border-priyaraGray dark:border-zinc-800 cursor-pointer hover:border-priyaraGold transition-all">
+                        <img src="${product.mainImage}" alt="${product.name}" class="w-12 h-16 object-cover object-top rounded-lg">
+                        <div>
+                            <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
+                            <p class="text-[10px] text-stone-400 uppercase">${product.category} - ${product.fabric}</p>
+                            <span class="text-xs text-priyaraGold font-bold">৳${product.price.toLocaleString()}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Wishlist Drawer mechanics
+        function toggleWishlistSidebar(open) {
+            const sidebar = document.getElementById('wishlistSidebar');
+            const container = document.getElementById('wishlistSidebarContainer');
+            if (open) {
+                sidebar.classList.remove('hidden');
+                setTimeout(() => container.style.transform = 'translateX(0)', 50);
+                renderWishlist();
+            } else {
+                container.style.transform = 'translateX(100%)';
+                setTimeout(() => sidebar.classList.add('hidden'), 300);
+            }
+        }
+
+        function toggleWishlist(id) {
+            const index = wishlist.indexOf(id);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                triggerToast('Removed from your exquisite Wishlist.');
+            } else {
+                wishlist.push(id);
+                triggerToast('Added to your exquisite Wishlist.');
+            }
+            updateCounters();
+            renderProducts();
+            renderWishlist();
+        }
+
+        function renderWishlist() {
+            const container = document.getElementById('wishlistItems');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (wishlist.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-24 text-stone-400">
+                        <p class="font-serif italic text-base">Your Wishlist is currently empty.</p>
+                        <p class="text-[9px] uppercase tracking-widest mt-2">Adorn it with elegant silhouettes as you browse.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            wishlist.forEach(id => {
+                const product = BRAND_PRODUCTS.find(p => p.id === id);
+                if (!product) return;
+
+                container.innerHTML += `
+                    <div class="flex gap-4 items-center border-b border-stone-100 dark:border-zinc-900 pb-4">
+                        <img src="${product.mainImage}" alt="${product.name}" class="w-16 h-20 object-cover object-top rounded-lg shadow-sm">
+                        <div class="flex-grow">
+                            <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
+                            <span class="text-xs text-priyaraGold font-bold">৳${product.price.toLocaleString()}</span>
+                        </div>
+                        <button onclick="toggleWishlistSidebar(false); displayProductDetails('${product.id}')" class="p-1.5 text-xs text-priyaraGold hover:underline font-semibold uppercase tracking-wider">
+                            Details
+                        </button>
+                        <button onclick="toggleWishlist('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        // Cart Drawer mechanics
+        function toggleCartSidebar(open) {
+            const sidebar = document.getElementById('cartSidebar');
+            const container = document.getElementById('cartSidebarContainer');
+            if (open) {
+                sidebar.classList.remove('hidden');
+                setTimeout(() => container.style.transform = 'translateX(0)', 50);
+                renderCart();
+            } else {
+                container.style.transform = 'translateX(100%)';
+                setTimeout(() => sidebar.classList.add('hidden'), 300);
+            }
+        }
+
+        function addToCart(id) {
+            if (!cart.includes(id)) {
+                cart.push(id);
+                triggerToast('Suite placed in your luxury cart.');
+            } else {
+                triggerToast('This masterpiece is already in your order panel.');
+            }
+            updateCounters();
+            toggleCartSidebar(true);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(itemId => itemId !== id);
+            triggerToast('Removed from order panel.');
+            updateCounters();
+            renderCart();
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cartItems');
+            const footer = document.getElementById('cartFooter');
+            if (!container || !footer) return;
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-24 text-stone-400">
+                        <p class="font-serif italic text-base">Your shopping bag is currently empty.</p>
+                        <p class="text-[9px] uppercase tracking-widest mt-2">Select couture collections to begin.</p>
+                    </div>
+                `;
+                footer.classList.add('hidden');
+                return;
+            }
+
+            footer.classList.remove('hidden');
+            let total = 0;
+
+            cart.forEach(id => {
+                const product = BRAND_PRODUCTS.find(p => p.id === id);
+                if (!product) return;
+                
+                total += product.price;
+                container.innerHTML += `
+                    <div class="flex gap-4 items-center border-b border-stone-100 dark:border-zinc-900 pb-4">
+                        <img src="${product.mainImage}" alt="${product.name}" class="w-16 h-20 object-cover object-top rounded-lg shadow-sm">
+                        <div class="flex-grow">
+                            <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
+                            <span class="text-xs text-priyaraGold font-bold">৳${product.price.toLocaleString()}</span>
+                        </div>
+                        <button onclick="removeFromCart('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors">
+                            <i class="fa-solid fa-trash-can text-sm"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            document.getElementById('cartTotal').innerText = `৳${total.toLocaleString()}`;
+        }
+
+        function updateCounters() {
+            const wishCount = document.getElementById('wishlistCount');
+            wishCount.innerText = wishlist.length;
+            wishlist.length > 0 ? wishCount.classList.remove('hidden') : wishCount.classList.add('hidden');
+
+            const cartCount = document.getElementById('cartCount');
+            cartCount.innerText = cart.length;
+            cart.length > 0 ? cartCount.classList.remove('hidden') : cartCount.classList.add('hidden');
+
+            const heart = document.getElementById('heartIcon');
+            if (wishlist.length > 0) {
+                heart.className = "fa-solid fa-heart text-lg text-priyaraGold animate-pulse";
+            } else {
+                heart.className = "fa-regular fa-heart text-lg";
+            }
+        }
+
+        // WhatsApp Checkout Direct Route
+        function checkoutViaWhatsApp() {
+            const phone = "8801700000000";
+            const items = cart.map(id => BRAND_PRODUCTS.find(p => p.id === id).name).join(', ');
+            const totalValue = document.getElementById('cartTotal').innerText;
+            const message = `Hello PRIYARA, I am placing an order for the following luxury items: ${items}. Total Value: ${totalValue}. Please guide me through delivery parameters.`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Quick View overlay handles
+        function toggleQuickViewModal(open) {
+            const modal = document.getElementById('quickViewModal');
+            if (open) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function openQuickView(id) {
+            const product = BRAND_PRODUCTS.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('quickViewImg').src = product.mainImage;
+            document.getElementById('quickViewCat').innerText = product.category;
+            document.getElementById('quickViewName').innerText = product.name;
+            document.getElementById('quickViewDesc').innerText = product.description;
+            document.getElementById('quickViewPrice').innerText = `৳${product.price.toLocaleString()}`;
+
+            // Map actions dynamically
+            document.getElementById('quickViewAddBtn').setAttribute('onclick', `addToCart('${product.id}'); toggleQuickViewModal(false);`);
+            document.getElementById('quickViewDetailBtn').setAttribute('onclick', `displayProductDetails('${product.id}'); toggleQuickViewModal(false);`);
+
+            toggleQuickViewModal(true);
+        }
+
+        // Display premium individual details page route
+        function displayProductDetails(id) {
+            const product = BRAND_PRODUCTS.find(p => p.id === id);
+            if (!product) return;
+
+            selectedProductForDetails = product;
+            detailActiveImgIndex = 0;
+
+            // Load values inside detail layout variables
+            document.getElementById('detailMainImg').src = product.images[0];
+            document.getElementById('detailAvailability').innerText = product.availability;
+            document.getElementById('detailName').innerText = product.name;
+            document.getElementById('detailDesc').innerText = product.description;
+            document.getElementById('detailFabric').innerText = product.fabric;
+            document.getElementById('detailCategory').innerText = product.category;
+            document.getElementById('detailPrice').innerText = `৳${product.price.toLocaleString()}`;
+
+            // Load bullet features
+            const featureList = document.getElementById('detailFeatures');
+            featureList.innerHTML = '';
+            product.features.forEach(feat => {
+                featureList.innerHTML += `<li class="flex items-center gap-2"><span class="text-priyaraGold">✦</span> <span>${feat}</span></li>`;
+            });
+
+            // Switch thumbnails selector panel
+            const thumbnailsContainer = document.getElementById('detailThumbnails');
+            thumbnailsContainer.innerHTML = '';
+            product.images.forEach((img, index) => {
+                thumbnailsContainer.innerHTML += `
+                    <button onclick="switchDetailMainImg(${index})" class="relative w-20 sm:w-24 aspect-[3/4] rounded-lg overflow-hidden border-2 flex-shrink-0 transition-all ${index === 0 ? 'border-priyaraGold' : 'border-transparent'} hover:border-priyaraGold/40" id="detail-thumb-${index}">
+                        <img src="${img}" alt="thumbnail" class="w-full h-full object-cover object-top">
+                    </button>
+                `;
+            });
+
+            // Map custom direct checkout handlers
+            document.getElementById('detailBuyBtn').setAttribute('onclick', `addToCart('${product.id}')`);
+            
+            // Map messaging trigger link coordinates
+            const messageTxt = `Hello PRIYARA, I am highly interested in ordering your elegant "${product.name}" suite. Is it currently in stock for delivery?`;
+            document.getElementById('detailWAMsgBtn').href = `https://wa.me/8801700000000?text=${encodeURIComponent(messageTxt)}`;
+
+            // Track Recently Viewed memory (max 4)
+            addToRecentlyViewed(product.id);
+
+            // Populated Related items from same material parameters
+            renderRelatedProducts(product.category, product.id);
+
+            navigateTo('details');
+            scrollToTop();
+        }
+
+        function switchDetailMainImg(index) {
+            if (!selectedProductForDetails) return;
+            detailActiveImgIndex = index;
+            document.getElementById('detailMainImg').src = selectedProductForDetails.images[index];
+
+            // Re-highlight border active thumbnails
+            selectedProductForDetails.images.forEach((_, idx) => {
+                const btn = document.getElementById(`detail-thumb-${idx}`);
+                if (btn) {
+                    if (idx === index) {
+                        btn.classList.add('border-priyaraGold');
+                        btn.classList.remove('border-transparent');
+                    } else {
+                        btn.classList.remove('border-priyaraGold');
+                        btn.classList.add('border-transparent');
+                    }
+                }
+            });
+        }
+
+        // Memory tracker for recently viewed suits
+        function addToRecentlyViewed(id) {
+            recentlyViewed = recentlyViewed.filter(viewId => viewId !== id);
+            recentlyViewed.unshift(id);
+            if (recentlyViewed.length > 4) {
+                recentlyViewed.pop();
+            }
+            renderRecentlyViewed();
+        }
+
+        function renderRecentlyViewed() {
+            const container = document.getElementById('recentlyViewedContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            recentlyViewed.forEach(viewId => {
+                const p = BRAND_PRODUCTS.find(item => item.id === viewId);
+                if (!p) return;
+
+                container.innerHTML += `
+                    <div onclick="displayProductDetails('${p.id}')" class="flex-shrink-0 w-24 text-left cursor-pointer hover:opacity-80 transition-all">
+                        <img src="${p.mainImage}" alt="${p.name}" class="w-24 h-32 object-cover object-top rounded-lg shadow-sm">
+                        <p class="font-serif text-xs font-semibold tracking-wide text-priyaraText dark:text-white truncate mt-2">${p.name}</p>
+                        <p class="text-[10px] text-priyaraGold font-bold">৳${p.price.toLocaleString()}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Render related dresses in the same category
+        function renderRelatedProducts(category, excludeId) {
+            const container = document.getElementById('relatedProductsContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const related = BRAND_PRODUCTS.filter(item => item.category === category && item.id !== excludeId).slice(0, 2);
+
+            related.forEach(p => {
+                container.innerHTML += `
+                    <div onclick="displayProductDetails('${p.id}')" class="cursor-pointer group flex flex-col gap-2">
+                        <div class="relative overflow-hidden aspect-[3/4] bg-stone-50 dark:bg-zinc-800 rounded-xl">
+                            <img src="${p.mainImage}" alt="${p.name}" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-semibold tracking-wide text-priyaraText dark:text-white truncate">${p.name}</h4>
+                            <p class="text-[11px] text-priyaraGold font-bold">৳${p.price.toLocaleString()}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Navigation state router
+        function navigateTo(view) {
+            const home = document.getElementById('homeView');
+            const details = document.getElementById('productDetailView');
+            const errorView = document.getElementById('error404View');
+
+            if (view === 'home') {
+                home.classList.remove('hidden');
+                details.classList.add('hidden');
+                errorView.classList.add('hidden');
+                selectedProductForDetails = null;
+            } else if (view === 'details') {
+                home.classList.add('hidden');
+                details.classList.remove('hidden');
+                errorView.classList.add('hidden');
+            } else if (view === '404') {
+                home.classList.add('hidden');
+                details.classList.add('hidden');
+                errorView.classList.remove('hidden');
+                scrollToTop();
+            }
+        }
+
+        // Visual Dark/Light toggle
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = "fa-solid fa-moon text-lg";
+                triggerToast('Light Mode activated.');
+            } else {
+                html.classList.add('dark');
+                icon.className = "fa-solid fa-sun text-lg text-priyaraGold animate-spin";
+                triggerToast('Dark Mode activated.');
+            }
+        }
+
+        // Clipboard Copy Address Tool
+        function copyAddressLink() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            triggerToast('Copied editorial address link to clipboard.');
+        }
+
+        // Lightbox Expand Frame
+        function toggleLightbox(open, imgUrl) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            if (open) {
+                img.src = imgUrl;
+                box.classList.remove('hidden');
+                box.classList.add('flex');
+            } else {
+                box.classList.add('hidden');
+                box.classList.remove('flex');
+                img.src = '';
+            }
+        }
+
+        function openFullscreenImg(imgUrl) {
+            toggleLightbox(true, imgUrl);
+        }
+
+        function openFullscreenImgFromDetails() {
+            if (!selectedProductForDetails) return;
+            toggleLightbox(true, selectedProductForDetails.images[detailActiveImgIndex]);
+        }
+
+        // Notification UI Toast Alerts
+        function triggerToast(msg) {
+            const toast = document.getElementById('toast');
+            const text = document.getElementById('toastMsg');
+            if (!toast || !text) return;
+
+            text.innerText = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('animate-bounce');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('animate-bounce');
+            }, 3500);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
