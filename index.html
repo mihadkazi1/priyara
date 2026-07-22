@@ -41,22 +41,15 @@
 
     <!-- Custom Premium Styles -->
     <style>
-        /* Shimmer Animation for Text */
+        /* High-Contrast Shimmer Animation for Dark Hero Backdrop */
         @keyframes shimmer {
             0% { background-position: -200% 0; }
             100% { background-position: 200% 0; }
         }
         .gold-shimmer-text {
-            background: linear-gradient(90deg, #111111 0%, #C9A86A 50%, #111111 100%);
+            background: linear-gradient(90deg, #FFFFFF 0%, #C9A86A 50%, #FFFFFF 100%);
             background-size: 200% auto;
-            animation: shimmer 3s infinite linear;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .dark .gold-shimmer-text {
-            background: linear-gradient(90deg, #ffffff 0%, #C9A86A 50%, #ffffff 100%);
-            background-size: 200% auto;
-            animation: shimmer 3s infinite linear;
+            animation: shimmer 3.5s infinite linear;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -69,7 +62,7 @@
         }
         .particle {
             position: absolute;
-            background: rgba(201, 168, 106, 0.2);
+            background: rgba(201, 168, 106, 0.25);
             border-radius: 50%;
             pointer-events: none;
             animation: particleUp 15s infinite linear;
@@ -244,8 +237,8 @@
     <!-- Main View Section -->
     <main id="homeView" class="block">
         
-        <!-- Editorial Fullscreen Parallax Hero Section with best cover.png darkened for complete readability -->
-        <section class="relative min-h-[95vh] flex items-center justify-center overflow-hidden pb-16">
+        <!-- Editorial Fullscreen Parallax Hero Section - Pure Middle Alignment & Perfect Viewport Scaling -->
+        <section class="relative min-h-[88dvh] flex flex-col items-center justify-between overflow-hidden px-4 py-6 sm:py-8">
             <!-- Fullscreen Cover Background with best cover.png -->
             <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000" style="background-image: url('best cover.png');"></div>
             <!-- Darker Overlay for completely visible text -->
@@ -254,38 +247,43 @@
             <!-- Soft floating luxury gold dust particles in Hero area -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none" id="heroParticles"></div>
 
-            <div class="max-w-4xl mx-auto text-center px-4 z-10 space-y-6 sm:space-y-8">
-                <p class="text-[11px] sm:text-[13px] uppercase tracking-[0.45em] text-priyaraGold font-bold">
+            <!-- Top spacer for vertical balancing -->
+            <div class="h-4 sm:h-8"></div>
+
+            <!-- Pure Middle Content Container -->
+            <div class="relative z-10 max-w-4xl mx-auto text-center space-y-5 sm:space-y-8 my-auto">
+                <p class="text-[10px] sm:text-[13px] uppercase tracking-[0.35em] sm:tracking-[0.45em] text-priyaraGold font-bold drop-shadow">
                     Where Elegance Meets Comfort
                 </p>
 
-                <div class="flex flex-col items-center space-y-6">
-                    <span class="text-4xl sm:text-6xl tracking-[0.3em] text-white uppercase font-extrabold gold-shimmer-text">PRIYARA</span>
+                <div class="flex flex-col items-center space-y-4 sm:space-y-6">
+                    <span class="text-4xl sm:text-6xl md:text-7xl tracking-[0.25em] sm:tracking-[0.3em] text-white uppercase font-extrabold gold-shimmer-text drop-shadow-lg">PRIYARA</span>
                     
-                    <div class="h-14 sm:h-20 flex items-center justify-center">
-                        <h1 id="typingText" class="text-lg sm:text-2xl lg:text-3xl font-serif italic tracking-[0.08em] text-white border-r border-priyaraGold px-2 whitespace-nowrap overflow-hidden max-w-full font-bold"></h1>
+                    <div class="h-10 sm:h-16 flex items-center justify-center">
+                        <h1 id="typingText" class="text-base sm:text-2xl lg:text-3xl font-serif italic tracking-[0.08em] text-white border-r-2 border-priyaraGold px-2 whitespace-nowrap overflow-hidden max-w-full font-bold drop-shadow-md"></h1>
                     </div>
                 </div>
 
-                <p class="text-[14px] sm:text-[17px] text-white font-times tracking-wide leading-relaxed max-w-xl mx-auto drop-shadow-lg font-normal">
-                    Discover premium Pakistani-inspired three-piece collections crafted with elegance, comfort, and timeless style. Designed for modern women who appreciate timeless beauty and sophisticated style.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4">
-                    <a href="#featured" class="w-full sm:w-auto px-8 py-4 text-[11px] uppercase tracking-[0.25em] bg-white text-priyaraText hover:bg-priyaraGold hover:text-white border border-priyaraGold rounded-full transition-all duration-500 font-bold shadow-lg hover:shadow-xl text-center">
+                <!-- Two buttons pushed lower with extra padding -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 pt-8 sm:pt-12 w-full sm:w-auto">
+                    <a href="#featured" class="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] bg-white text-priyaraText hover:bg-priyaraGold hover:text-white border border-priyaraGold rounded-full transition-all duration-500 font-bold shadow-lg hover:shadow-xl text-center">
                         Explore Collection
                     </a>
-                    <a href="#featured" class="w-full sm:w-auto px-8 py-4 text-[11px] uppercase tracking-[0.25em] bg-[#111111] hover:bg-priyaraGold text-white border border-[#111111] hover:border-priyaraGold rounded-full transition-all duration-500 font-bold text-center">
+                    <a href="#featured" class="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] bg-[#111111] hover:bg-priyaraGold text-white border border-[#111111] hover:border-priyaraGold rounded-full transition-all duration-500 font-bold text-center">
                         Shop Now
                     </a>
                 </div>
             </div>
 
-            <!-- Scroll Indicator centered and lifted up slightly for optimal spacing -->
-            <div class="absolute bottom-14 inset-x-0 mx-auto w-fit flex flex-col items-center justify-center animate-bounce opacity-90 z-10 text-center">
-                <span class="text-[9px] uppercase tracking-[0.3em] text-priyaraGold mb-2 font-bold">Scroll To View</span>
-                <i class="fa-solid fa-chevron-down text-priyaraGold text-sm"></i>
-            </div>
+            <!-- Scroll Indicator anchored directly at bottom
+            <div class="relative z-20 pt-6 pb-2 text-center animate-bounce">
+                <a href="#featured" class="flex flex-col items-center justify-center group">
+                    <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.3em] text-priyaraGold mb-1.5 font-bold drop-shadow-lg bg-black/50 backdrop-blur-md px-3.5 py-1 rounded-full border border-priyaraGold/40">Scroll To View</span>
+                    <i class="fa-solid fa-chevron-down text-priyaraGold text-xs sm:text-sm"></i>
+                </a>
+            </div> -->
+             <div class="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-priyaraGold to-transparent z-20"></div>
+            
         </section>
 
         <!-- Featured Collection Section -->
