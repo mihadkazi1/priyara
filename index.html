@@ -24,6 +24,7 @@
                     fontFamily: {
                         serif: ['Cormorant Garamond', 'Playfair Display', 'serif'],
                         sans: ['Poppins', 'Inter', 'sans-serif'],
+                        times: ['Times New Roman', 'Times', 'serif'],
                     }
                 }
             }
@@ -243,12 +244,12 @@
     <!-- Main View Section -->
     <main id="homeView" class="block">
         
-        <!-- Editorial Fullscreen Parallax Hero Section with best cover.png slightly blurred and darkened for perfect readability -->
-        <section class="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
+        <!-- Editorial Fullscreen Parallax Hero Section with best cover.png darkened for complete readability -->
+        <section class="relative min-h-[95vh] flex items-center justify-center overflow-hidden pb-16">
             <!-- Fullscreen Cover Background with best cover.png -->
             <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000" style="background-image: url('best cover.png');"></div>
-            <!-- Glassmorphism Blur & Dark Overlay for optimal text legibility -->
-            <div class="absolute inset-0 bg-black/45 backdrop-blur-[3px] pointer-events-none"></div>
+            <!-- Darker Overlay for completely visible text -->
+            <div class="absolute inset-0 bg-black/45 backdrop-blur-[2px] pointer-events-none"></div>
             
             <!-- Soft floating luxury gold dust particles in Hero area -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none" id="heroParticles"></div>
@@ -262,11 +263,11 @@
                     <span class="text-4xl sm:text-6xl tracking-[0.3em] text-white uppercase font-extrabold gold-shimmer-text">PRIYARA</span>
                     
                     <div class="h-14 sm:h-20 flex items-center justify-center">
-                        <h1 id="typingText" class="text-lg sm:text-2xl lg:text-3xl font-serif italic tracking-[0.08em] text-stone-100 border-r border-priyaraGold px-2 whitespace-nowrap overflow-hidden max-w-full font-bold"></h1>
+                        <h1 id="typingText" class="text-lg sm:text-2xl lg:text-3xl font-serif italic tracking-[0.08em] text-white border-r border-priyaraGold px-2 whitespace-nowrap overflow-hidden max-w-full font-bold"></h1>
                     </div>
                 </div>
 
-                <p class="text-[13px] sm:text-[16px] text-stone-200 tracking-wide leading-relaxed max-w-xl mx-auto font-serif drop-shadow-md">
+                <p class="text-[14px] sm:text-[17px] text-white font-times tracking-wide leading-relaxed max-w-xl mx-auto drop-shadow-lg font-normal">
                     Discover premium Pakistani-inspired three-piece collections crafted with elegance, comfort, and timeless style. Designed for modern women who appreciate timeless beauty and sophisticated style.
                 </p>
 
@@ -280,9 +281,9 @@
                 </div>
             </div>
 
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-70 z-10">
-                <span class="text-[9px] uppercase tracking-[0.3em] text-priyaraGold mb-2">Scroll To View</span>
+            <!-- Scroll Indicator centered and lifted up slightly for optimal spacing -->
+            <div class="absolute bottom-14 inset-x-0 mx-auto w-fit flex flex-col items-center justify-center animate-bounce opacity-90 z-10 text-center">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-priyaraGold mb-2 font-bold">Scroll To View</span>
                 <i class="fa-solid fa-chevron-down text-priyaraGold text-sm"></i>
             </div>
         </section>
@@ -641,7 +642,7 @@
                                 </div>
                                 <div>
                                     <span class="block text-[10px] text-stone-400 uppercase tracking-wider">Email Correspondence</span>
-                                    <a href="mailto:contact@priyarabd.com" class="font-medium text-priyaraText dark:text-white hover:text-priyaraGold">contact@priyarabd.com</a>
+                                    <a href="mailto:priyara.bd@gmail.com" class="font-medium text-priyaraText dark:text-white hover:text-priyaraGold">priyara.bd@gmail.com</a>
                                 </div>
                             </div>
 
@@ -844,7 +845,7 @@
     </section>
 
     <!-- Luxury Brand Footer -->
-    <footer class="bg-[#111111] text-stone-450 border-t border-priyaraGold/20 pt-16 pb-8">
+    <footer class="bg-[#111111] text-stone-400 border-t border-priyaraGold/20 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-stone-850">
             
             <div class="space-y-4">
@@ -859,21 +860,21 @@
 
             <div class="space-y-3 text-xs">
                 <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><button onclick="navigateTo('home')" class="hover:text-white transition-colors">Home</button></li>
-                    <li><a href="#featured" class="hover:text-white transition-colors">Collections</a></li>
-                    <li><a href="#promise" class="hover:text-white transition-colors">About</a></li>
-                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                <ul class="space-y-2 text-white">
+                    <li><button onclick="navigateTo('home')" class="text-white">Home</button></li>
+                    <li><a href="#featured" class="text-white">Collections</a></li>
+                    <li><a href="#promise" class="text-white">About</a></li>
+                    <li><a href="#contact" class="text-white">Contact</a></li>
+                    <li><a href="#faq" class="text-white">FAQ</a></li>
                 </ul>
             </div>
 
             <div class="space-y-3 text-xs">
                 <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Follow Us</h3>
-                <ul class="space-y-2">
-                    <li><a href="https://facebook.com/PRIYARA" target="_blank" class="hover:text-white transition-colors">Facebook: PRIYARA</a></li>
-                    <li><a href="https://instagram.com/priyara.bd" target="_blank" class="hover:text-white transition-colors font-semibold text-priyaraGold">Instagram: @priyara.bd</a></li>
-                    <li><span class="text-stone-550 block">Dhaka, Bangladesh</span></li>
+                <ul class="space-y-2 text-white">
+                    <li><a href="https://facebook.com/PRIYARA" target="_blank" class="text-white">Facebook: PRIYARA</a></li>
+                    <li><a href="https://instagram.com/priyara.bd" target="_blank" class="text-white font-semibold">Instagram: @priyara.bd</a></li>
+                    <li><span class="text-stone-400 block">Dhaka, Bangladesh</span></li>
                 </ul>
             </div>
 
@@ -893,8 +894,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500">
             <p>© 2026 PRIYARA. All Rights Reserved. Designed with elegance.</p>
             <div class="flex space-x-6 mt-4 sm:mt-0">
-                <span class="text-stone-650 hover:text-stone-400 cursor-pointer">Privacy Policy</span>
-                <span class="text-stone-650 hover:text-stone-400 cursor-pointer">Terms of Service</span>
+                <span class="text-stone-500 hover:text-stone-400 cursor-pointer">Privacy Policy</span>
+                <span class="text-stone-500 hover:text-stone-400 cursor-pointer">Terms of Service</span>
             </div>
         </div>
     </footer>
@@ -1017,21 +1018,21 @@
 
     <!-- Complete Javascript Mechanics Block -->
     <script>
-        // Core Database: 8 Signature Collections conforming exactly to product criteria
+        // Core Database: 8 Signature Collections categorized explicitly
         const BRAND_PRODUCTS = [
             {
                 id: 'white-elegance',
                 name: 'White Elegance',
                 price: 1950,
-                category: 'Premium Cotton Three-Piece',
+                category: 'Premium Georgette Three-Piece',
                 availability: 'In Stock - Limited Edition',
                 mainImage: 'whitemain.jpg',
                 images: ['whitemain.jpg', 'white1.jpg', 'white2.jpg', 'white3.jpg', 'white4.jpg'],
-                description: 'White Elegance is a timeless Pakistani-inspired three-piece crafted from premium cotton. Featuring elegant embroidery and refined detailing, this collection offers a graceful look with exceptional comfort, making it perfect for festive gatherings, family occasions, and everyday elegance.',
-                fabric: 'Premium Cotton Fabric',
+                description: 'White Elegance is a timeless Pakistani-inspired three-piece crafted from premium Georgette. Featuring elegant embroidery and refined detailing, this collection offers a graceful look with exceptional comfort, making it perfect for festive gatherings, family occasions, and everyday elegance.',
+                fabric: 'Premium Georgette Fabric',
                 care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
                 features: [
-                    'Premium Cotton Fabric',
+                    'Premium Georgette Fabric',
                     'Elegant Embroidery',
                     'Soft & Breathable',
                     'Comfortable All-Day Wear',
@@ -1099,15 +1100,15 @@
                 id: 'Deep-Magenta',
                 name: 'Deep-Magenta',
                 price: 1750,
-                category: 'Premium Georgette Three-Piece',
+                category: 'Premium Cotton Three-Piece',
                 availability: 'Highly Demanded',
                 mainImage: 'deepmagentamain.jpg',
                 images: ['deepmagentamain.jpg', 'deepmagenta6.jpg', 'deepmagentamain1.jpg', 'deepmagentamain2.jpg'],
-                description: 'Deep-Magenta is crafted from premium Georgette fabric with luxurious embroidery, offering a refined and graceful look that\'s perfect for evening events and festive occasions.',
-                fabric: 'Premium Georgette Fabric',
+                description: 'Deep-Magenta is crafted from premium Cotton fabric with luxurious embroidery, offering a refined and graceful look that\'s perfect for evening events and festive occasions.',
+                fabric: 'Premium Cotton Fabric',
                 care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
                 features: [
-                    'Premium Georgette Fabric',
+                    'Premium Cotton Fabric',
                     'Elegant Embroidery',
                     'Lightweight',
                     'Flowing Dupatta',
@@ -1136,15 +1137,15 @@
                 id: 'Yellow',
                 name: 'Yellow',
                 price: 1750,
-                category: 'Premium Georgette Three-Piece',
+                category: 'Premium Cotton Three-Piece',
                 availability: 'Limited Edition',
                 mainImage: 'yellowmain.jpg',
                 images: ['yellowmain.jpg', 'yellow1.jpg', 'yellow2.jpg', 'yellow4.jpg', 'yellow5.jpg', 'yellow6.jpg'],
-                description: 'Yell offers a graceful and minimalist luxury look with premium Georgette fabric and elegant detailing. Designed for women who appreciate timeless beauty.',
-                fabric: 'Premium Georgette',
+                description: 'Yellow offers a graceful and minimalist luxury look with premium Cotton fabric and elegant detailing. Designed for women who appreciate timeless beauty.',
+                fabric: 'Premium Cotton',
                 care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
                 features: [
-                    'Premium Georgette',
+                    'Premium Cotton',
                     'Elegant Design',
                     'Lightweight',
                     'Comfortable Wear'
