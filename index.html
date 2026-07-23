@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- STREAMING_CHUNK:Configuring viewport metadata and Tailwind framework... -->
+    <!-- STREAMING_CHUNK:Configuring viewport, theme colors, and font styles... -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRIYARA | Premium Women's Fashion</title>
     <meta name="description" content="Discover premium Pakistani-inspired three-piece collections crafted with elegance, comfort, and timeless style.">
+    <meta name="theme-color" content="#111111">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PRIYARA">
+    
+    <!-- Open Graph Social Sharing -->
+    <meta property="og:title" content="PRIYARA | Premium Women's Fashion">
+    <meta property="og:description" content="Discover premium Pakistani-inspired three-piece collections">
+    <meta property="og:image" content="whitemain.jpg">
+    <meta property="og:type" content="website">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,7 +50,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- STREAMING_CHUNK:Defining gold shimmer animations and luxury keyframes... -->
+    <!-- STREAMING_CHUNK:Defining gold shimmer keyframes and mobile touch optimizations... -->
     <style>
         /* High-Contrast Shimmer Animation for Dark Hero Backdrop */
         @keyframes shimmer {
@@ -61,7 +71,7 @@
             100% { background-position: 200% 0; }
         }
         .pure-gold-shimmer {
-        background: linear-gradient(90deg, #FFFFFF 0%, #C9A86A 50%, #FFFFFF 100%);
+            background: linear-gradient(90deg, #C9A86A 0%, #FFF2A1 50%, #C9A86A 100%);
             background-size: 200% auto;
             animation: pureGoldShimmer 2.5s infinite linear;
             -webkit-background-clip: text;
@@ -80,6 +90,27 @@
             border-radius: 50%;
             pointer-events: none;
             animation: particleUp 15s infinite linear;
+        }
+
+        /* Responsive Mobile Touch Feedback & CPU Optimization */
+        @media (max-width: 768px) {
+            .particle {
+                animation: none !important;
+                display: none;
+            }
+            .text-\[10px\],
+            .text-\[9px\] {
+                font-size: 11px;
+            }
+        }
+
+        /* Touch Active Feedback */
+        @media (hover: none) and (pointer: coarse) {
+            button:active,
+            a:active {
+                transform: scale(0.98);
+                opacity: 0.85;
+            }
         }
 
         /* Luxury Scrollbar */
@@ -133,7 +164,7 @@
 </head>
 <body class="bg-white dark:bg-zinc-950 text-priyaraText dark:text-stone-100 font-sans transition-colors duration-300">
 
-    <!-- STREAMING_CHUNK:Rendering animated loading screen with pure gold text... -->
+    <!-- STREAMING_CHUNK:Rendering preloader screen with pure gold shimmer animation... -->
     <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white dark:bg-zinc-950 transition-all duration-750">
         <div class="relative w-48 h-48 flex items-center justify-center">
             <!-- Shimmer circular accent border -->
@@ -153,12 +184,12 @@
     <!-- Scroll Progress Indicator -->
     <div class="fixed top-0 left-0 h-1 bg-priyaraGold z-50 transition-all duration-100" id="progressBar" style="width: 0%;"></div>
 
-    <!-- STREAMING_CHUNK:Constructing global header navigation bar... -->
+    <!-- STREAMING_CHUNK:Constructing header with 44px minimum mobile touch target sizes... -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-priyaraGray dark:border-zinc-900 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 sm:h-24">
                 
-                <!-- Corner Logo Image instead of text -->
+                <!-- Corner Logo Image -->
                 <div class="flex items-center">
                     <button onclick="navigateTo('home')" class="flex items-center gap-3" aria-label="Go to home">
                         <img src="ChatGPT Image Jun 21, 2026, 06_29_23 PM.png" alt="PRIYARA Corner Logo" class="h-12 sm:h-16 w-auto object-contain bg-white rounded-lg p-1 shadow-sm border border-priyaraGray/40 dark:border-zinc-800">
@@ -166,7 +197,7 @@
                 </div>
 
                 <!-- Left navigation elements (Desktop Only) -->
-                <div class="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-priyaraText/80 dark:text-stone-300">
+                <div class="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-priyaraText dark:text-stone-300">
                     <button onclick="navigateTo('home')" class="lux-link hover:text-priyaraGold transition-colors">The Atelier</button>
                     <a href="#featured" class="lux-link hover:text-priyaraGold transition-colors">Collections</a>
                     <a href="#promise" class="lux-link hover:text-priyaraGold transition-colors">Our Promise</a>
@@ -174,32 +205,27 @@
                     <a href="#contact" class="lux-link hover:text-priyaraGold transition-colors">Contact</a>
                 </div>
 
-                <!-- Right Toolbar menu options -->
-                <div class="flex items-center space-x-3 sm:space-x-6">
-                    <!-- Theme toggler -->
-                    <button onclick="toggleDarkMode()" class="p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Toggle visual theme">
+                <!-- Right Toolbar menu options with expanded 44px tap targets -->
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button onclick="toggleDarkMode()" class="p-3 sm:p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Toggle visual theme">
                         <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
                     </button>
 
-                    <!-- Search trigger -->
-                    <button onclick="toggleSearchOverlay(true)" class="p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Search catalog">
+                    <button onclick="toggleSearchOverlay(true)" class="p-3 sm:p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Search catalog">
                         <i class="fa-solid fa-magnifying-glass text-lg"></i>
                     </button>
 
-                    <!-- Wishlist toggle -->
-                    <button onclick="toggleWishlistSidebar(true)" class="p-2 relative text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Open wishlist">
+                    <button onclick="toggleWishlistSidebar(true)" class="p-3 sm:p-2 relative text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Open wishlist">
                         <i class="fa-regular fa-heart text-lg" id="heartIcon"></i>
-                        <span id="wishlistCount" class="absolute -top-1 -right-1 bg-priyaraGold text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                        <span id="wishlistCount" class="absolute top-1 right-1 bg-priyaraGold text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden">0</span>
                     </button>
 
-                    <!-- Shopping Cart drawer toggle -->
-                    <button onclick="toggleCartSidebar(true)" class="p-2 relative text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Open shopping bag">
+                    <button onclick="toggleCartSidebar(true)" class="p-3 sm:p-2 relative text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Open shopping bag">
                         <i class="fa-solid fa-bag-shopping text-lg"></i>
-                        <span id="cartCount" class="absolute -top-1 -right-1 bg-priyaraText dark:bg-white text-white dark:text-priyaraText text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden border border-priyaraGold">0</span>
+                        <span id="cartCount" class="absolute top-1 right-1 bg-priyaraText dark:bg-white text-white dark:text-priyaraText text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden border border-priyaraGold">0</span>
                     </button>
 
-                    <!-- Drawer Menu Trigger on Mobile -->
-                    <button onclick="toggleMobileMenu(true)" class="lg:hidden p-2 text-priyaraText dark:text-white" aria-label="Open menu">
+                    <button onclick="toggleMobileMenu(true)" class="lg:hidden p-3 text-priyaraText dark:text-white" aria-label="Open navigation menu">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -208,8 +234,8 @@
         </div>
     </header>
 
-    <!-- STREAMING_CHUNK:Rendering mobile menu drawer and search dialog... -->
-    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex transition-opacity duration-300">
+    <!-- STREAMING_CHUNK:Rendering mobile menu drawer and accessible search dialog... -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex transition-opacity duration-300" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
         <div class="bg-white dark:bg-zinc-950 w-4/5 max-w-sm h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[-100%] transition-transform duration-300" id="mobileMenuContainer">
             <button onclick="toggleMobileMenu(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white" aria-label="Close menu">
                 <i class="fa-solid fa-xmark text-2xl"></i>
@@ -234,36 +260,35 @@
     </div>
 
     <!-- Search Overlay -->
-    <div id="searchOverlay" class="fixed inset-0 z-50 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md hidden flex flex-col justify-start pt-24 px-4">
-        <button onclick="toggleSearchOverlay(false)" class="absolute top-8 right-8 p-3 text-priyaraText dark:text-white hover:text-priyaraGold transition-all">
+    <div id="searchOverlay" class="fixed inset-0 z-50 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md hidden flex flex-col justify-start pt-24 px-4" role="dialog" aria-label="Search Catalog">
+        <button onclick="toggleSearchOverlay(false)" class="absolute top-8 right-8 p-3 text-priyaraText dark:text-white hover:text-priyaraGold transition-all" aria-label="Close search">
             <i class="fa-solid fa-xmark text-3xl"></i>
         </button>
         <div class="max-w-3xl mx-auto w-full text-center space-y-8">
             <h2 class="text-2xl font-serif tracking-[0.1em] text-priyaraText dark:text-white uppercase">Search collections</h2>
             <div class="relative">
-                <input type="text" id="searchInput" oninput="performSearch()" placeholder="Search White Elegance, Cotton, Georgette..." class="w-full text-xl sm:text-2xl font-serif border-b border-priyaraGold bg-transparent py-4 text-center text-priyaraText dark:text-white focus:outline-none placeholder-stone-300 dark:placeholder-zinc-700">
+                <label for="searchInput" class="sr-only">Search collections</label>
+                <input type="text" id="searchInput" oninput="performSearch()" placeholder="Search White Elegance, Cotton, Georgette..." class="w-full text-xl sm:text-2xl font-serif border-b border-priyaraGold bg-transparent py-4 text-center text-priyaraText dark:text-white focus:outline-none placeholder-stone-300 dark:placeholder-zinc-700" aria-label="Search collections">
                 <i class="fa-solid fa-magnifying-glass absolute right-4 bottom-5 text-priyaraGold text-xl"></i>
             </div>
             <div id="searchResults" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[50vh] overflow-y-auto pt-4 text-left">
-                <!-- Filled dynamically -->
             </div>
         </div>
     </div>
 
-    <!-- STREAMING_CHUNK:Building hero section layout with animated typewriter title... -->
+    <!-- STREAMING_CHUNK:Building hero section with fixed image tag (Fixes mobile zoom)... -->
     <main id="homeView" class="block">
         
-        <!-- Editorial Fullscreen Parallax Hero Section -->
         <section class="relative min-h-[100dvh] flex flex-col items-center justify-between overflow-hidden px-4 py-6 sm:py-8">
-            <!-- Fullscreen Cover Background -->
-            <picture class="absolute inset-0 pointer-events-none overflow-hidden">
-    <img src="best cover.png" alt="Hero backdrop" class="w-full h-full object-cover object-center">
-</picture>
-            <!-- <div class="absolute inset-0 bg-cover background-attachment: fixed  bg-center bg-no-repeat pointer-events-none" style="background-image: url('best cover.png'); background-size: cover; background-position: center center;"></div> -->
-            <!-- Darker Overlay -->
+            <!-- Native <img> container fixes mobile address-bar resize zoom bug -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <img src="best cover.png" alt="PRIYARA Hero Cover Backdrop" class="w-full h-full object-cover object-center pointer-events-none">
+            </div>
+
+            <!-- Dark Overlay for Contrast -->
             <div class="absolute inset-0 bg-black/45 backdrop-blur-[2px] pointer-events-none"></div>
             
-            <!-- Floating gold particles -->
+            <!-- Soft Floating Particles -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none" id="heroParticles"></div>
 
             <div class="h-4 sm:h-8"></div>
@@ -295,7 +320,7 @@
             <div class="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-priyaraGold to-transparent z-20"></div>
         </section>
 
-        <!-- STREAMING_CHUNK:Rendering main product catalog grid... -->
+        <!-- STREAMING_CHUNK:Rendering featured products catalog with lazy loading... -->
         <section id="featured" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div class="space-y-3">
@@ -306,15 +331,15 @@
                     <div class="w-12 h-[1px] bg-priyaraGold"></div>
                 </div>
 
-                <!-- Custom Category Filters -->
-                <div class="flex flex-wrap items-center gap-2">
-                    <button onclick="filterCategory('All')" id="cat-All" class="cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-[#111111] text-white border border-[#111111]">
+                <!-- Category Filters -->
+                <div class="flex flex-wrap items-center gap-2 overflow-x-auto pb-2" role="group" aria-label="Product category filters">
+                    <button onclick="filterCategory('All')" id="cat-All" class="cat-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-[#111111] text-white border border-[#111111]">
                         All
                     </button>
-                    <button onclick="filterCategory('Premium Cotton Three-Piece')" id="cat-Cotton" class="cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent">
+                    <button onclick="filterCategory('Premium Cotton Three-Piece')" id="cat-Cotton" class="cat-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent">
                         Premium Cotton Three-Piece
                     </button>
-                    <button onclick="filterCategory('Premium Georgette Three-Piece')" id="cat-Georgette" class="cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent">
+                    <button onclick="filterCategory('Premium Georgette Three-Piece')" id="cat-Georgette" class="cat-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent">
                         Premium Georgette Three-Piece
                     </button>
                 </div>
@@ -322,7 +347,6 @@
 
             <!-- Dynamic grid container of 8 items -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12" id="productGrid">
-                <!-- Populated dynamically via JS -->
             </div>
         </section>
 
@@ -349,8 +373,8 @@
                     <p class="text-xs text-stone-400 uppercase tracking-widest">Crafted with Timeless Sophistication</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-gem text-xl"></i>
                         </div>
@@ -358,7 +382,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Sourcing exquisite, long-lasting fabrics that embody luxury and visual perfection.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
                         </div>
@@ -366,7 +390,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Handcrafted traditional frameworks designed to enhance your confidence and natural presence.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-globe text-xl"></i>
                         </div>
@@ -374,7 +398,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Artfully tailored layouts matching standard luxury South Asian patterns and drapes.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-compass-drafting text-xl"></i>
                         </div>
@@ -382,7 +406,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Strict editorial selection ensuring every single suit is a masterpiece of craftsmanship.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-scissors text-xl"></i>
                         </div>
@@ -390,7 +414,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">High density needlework, scalloped borders, and pristine structural finish.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-leaf text-xl"></i>
                         </div>
@@ -398,7 +422,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Breathable and gentle next-to-skin weaves built for beautiful everyday luxury.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-certificate text-xl"></i>
                         </div>
@@ -406,7 +430,7 @@
                         <p class="text-xs text-stone-550 dark:text-stone-400 leading-relaxed">Dedicated to pristine customer support, secure packaging, and verified materials.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                    <div class="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-priyaraGray/75 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
                         <div class="w-12 h-12 bg-priyaraSec dark:bg-zinc-950 rounded-xl flex items-center justify-center text-priyaraGold">
                             <i class="fa-solid fa-crown text-xl"></i>
                         </div>
@@ -417,7 +441,7 @@
             </div>
         </section>
 
-        <!-- STREAMING_CHUNK:Building customer review gallery with zoomable client photos... -->
+        <!-- STREAMING_CHUNK:Constructing customer reviews with clickable full-screen photos... -->
         <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="text-center space-y-3 mb-16">
                 <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-bold">Customer Feedback</span>
@@ -427,15 +451,13 @@
                 <div class="w-12 h-[1px] bg-priyaraGold mx-auto my-2"></div>
             </div>
 
-            <!-- Testimonials Grid with clickable full-screen photos -->
             <div class="relative w-full overflow-hidden px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6" id="reviewsContainer">
                     
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between" role="article">
                         <div class="space-y-4">
-                            <!-- Clickable Image -->
                             <div onclick="openFullscreenImg('csreview1.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                                <img src="csreview1.jpg" alt="Customer Review 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='whitemain.jpg';">
+                                <img src="csreview1.jpg" alt="Customer Review 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='whitemain.jpg';">
                                 <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                                     <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                                 </div>
@@ -460,11 +482,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between" role="article">
                         <div class="space-y-4">
-                            <!-- Clickable Image -->
                             <div onclick="openFullscreenImg('csreview2.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                                <img src="csreview2.jpg" alt="Customer Review 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='Magentamain.jpg';">
+                                <img src="csreview2.jpg" alt="Customer Review 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='Magentamain.jpg';">
                                 <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                                     <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                                 </div>
@@ -489,11 +510,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between" role="article">
                         <div class="space-y-4">
-                            <!-- Clickable Image -->
                             <div onclick="openFullscreenImg('csreview3.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                                <img src="csreview3.jpg" alt="Customer Review 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='taupemain.jpg';">
+                                <img src="csreview3.jpg" alt="Customer Review 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='taupemain.jpg';">
                                 <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                                     <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                                 </div>
@@ -518,11 +538,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between" role="article">
                         <div class="space-y-4">
-                            <!-- Clickable Image -->
                             <div onclick="openFullscreenImg('csreview4.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                                <img src="csreview4.jpg" alt="Customer Review 4" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='pinkmain.jpg';">
+                                <img src="csreview4.jpg" alt="Customer Review 4" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='pinkmain.jpg';">
                                 <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                                     <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                                 </div>
@@ -547,11 +566,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between" role="article">
                         <div class="space-y-4">
-                            <!-- Clickable Image -->
                             <div onclick="openFullscreenImg('csreview5.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                                <img src="csreview5.jpg" alt="Customer Review 5" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='skymain.jpg';">
+                                <img src="csreview5.jpg" alt="Customer Review 5" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='skymain.jpg';">
                                 <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                                     <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                                 </div>
@@ -578,7 +596,6 @@
 
                 </div>
 
-                <!-- See More Reviews Button -->
                 <div class="mt-12 text-center">
                     <button onclick="toggleAllReviewsModal(true)" class="px-8 py-3.5 border border-priyaraGold text-priyaraText dark:text-stone-200 hover:bg-priyaraGold hover:text-white rounded-full text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-sm">
                         See More Reviews
@@ -587,7 +604,7 @@
             </div>
         </section>
 
-        <!-- STREAMING_CHUNK:Rendering Instagram Lookbook and FAQs... -->
+        <!-- STREAMING_CHUNK:Rendering Instagram inspiration grid and FAQs... -->
         <section id="instagram" class="py-20 bg-[#F7F5F2] dark:bg-zinc-950 border-t border-priyaraGray dark:border-zinc-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-3 mb-16">
@@ -600,25 +617,25 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <button onclick="openFullscreenImg('whitemain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
-                        <img src="whitemain.jpg" alt="White Elegance lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="whitemain.jpg" alt="White Elegance lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
                         </div>
                     </button>
                     <button onclick="openFullscreenImg('pinkmain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
-                        <img src="pinkmain.jpg" alt="Rose Pink lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="pinkmain.jpg" alt="Rose Pink lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
                         </div>
                     </button>
                     <button onclick="openFullscreenImg('skymain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
-                        <img src="skymain.jpg" alt="Sky Blue Grace lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="skymain.jpg" alt="Sky Blue Grace lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
                         </div>
                     </button>
                     <button onclick="openFullscreenImg('seagreenmain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
-                        <img src="seagreenmain.jpg" alt="Deep Sea Green lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="seagreenmain.jpg" alt="Deep Sea Green lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white text-xs tracking-wider border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">@priyara.bd</span>
                         </div>
@@ -627,7 +644,7 @@
             </div>
         </section>
 
-        <!-- Frequently Asked Questions section -->
+        <!-- FAQs -->
         <section id="faq" class="py-24 max-w-4xl mx-auto px-4">
             <div class="text-center space-y-3 mb-16">
                 <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Shopping Guidance</span>
@@ -727,11 +744,11 @@
                         </div>
 
                         <div class="flex flex-col sm:flex-row gap-3 pt-4">
-                            <a href="https://wa.me/8801700000000" target="_blank" class="px-6 py-3.5 bg-emerald-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-emerald-700 transition-all text-center">
+                            <a href="" target="_blank" class="px-6 py-3.5 bg-emerald-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-emerald-700 transition-all text-center">
                                 <i class="fa-brands fa-whatsapp text-sm"></i>
                                 <span>Message Us</span>
                             </a>
-                            <a href="https://facebook.com/PRIYARA" target="_blank" class="px-6 py-3.5 border border-priyaraGold text-priyaraText dark:text-stone-100 rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-priyaraGold hover:text-white transition-all text-center">
+                            <a href="https://www.facebook.com/priyara.bd/" target="_blank" class="px-6 py-3.5 border border-priyaraGold text-priyaraText dark:text-stone-100 rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-priyaraGold hover:text-white transition-all text-center">
                                 <i class="fa-brands fa-facebook-messenger text-sm"></i>
                                 <span>Contact Us</span>
                             </a>
@@ -752,7 +769,7 @@
         </section>
     </main>
 
-    <!-- Detailed Product View -->
+    <!-- STREAMING_CHUNK:Constructing Product Detail view layout... -->
     <section id="productDetailView" class="hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
             <button onclick="navigateTo('home')" class="group text-[11px] uppercase tracking-[0.25em] text-priyaraText/60 dark:text-stone-300 hover:text-priyaraGold flex items-center gap-2 transition-colors">
@@ -820,7 +837,7 @@
                             <span>Message Us</span>
                         </a>
 
-                        <a id="detailMessengerBtn" href="https://facebook.com/PRIYARA" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-priyaraGold hover:bg-[#D9B97A] text-white rounded-xl text-xs font-bold transition-all">
+                        <a id="detailMessengerBtn" href="https://www.facebook.com/priyara.bd/" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-priyaraGold hover:bg-[#D9B97A] text-white rounded-xl text-xs font-bold transition-all">
                             <i class="fa-brands fa-facebook-messenger text-base"></i>
                             <span>Contact Us</span>
                         </a>
@@ -887,7 +904,7 @@
     <!-- STREAMING_CHUNK:Rendering See More Reviews popup modal... -->
     <div id="allReviewsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="bg-white dark:bg-zinc-900 w-full max-w-5xl max-h-[90vh] rounded-3xl p-6 sm:p-10 overflow-y-auto relative shadow-2xl space-y-8">
-            <button onclick="toggleAllReviewsModal(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors">
+            <button onclick="toggleAllReviewsModal(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors" aria-label="Close modal">
                 <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
 
@@ -897,9 +914,9 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4" role="article">
                     <div onclick="openFullscreenImg('csreview1.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                        <img src="csreview1.jpg" alt="Review 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='whitemain.jpg';">
+                        <img src="csreview1.jpg" alt="Review 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='whitemain.jpg';">
                         <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                             <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                         </div>
@@ -914,9 +931,9 @@
                     </div>
                 </div>
 
-                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4" role="article">
                     <div onclick="openFullscreenImg('csreview2.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                        <img src="csreview2.jpg" alt="Review 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='Magentamain.jpg';">
+                        <img src="csreview2.jpg" alt="Review 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='Magentamain.jpg';">
                         <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                             <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                         </div>
@@ -931,9 +948,9 @@
                     </div>
                 </div>
 
-                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4" role="article">
                     <div onclick="openFullscreenImg('csreview3.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                        <img src="csreview3.jpg" alt="Review 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='taupemain.jpg';">
+                        <img src="csreview3.jpg" alt="Review 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='taupemain.jpg';">
                         <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                             <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                         </div>
@@ -948,9 +965,9 @@
                     </div>
                 </div>
 
-                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4" role="article">
                     <div onclick="openFullscreenImg('csreview4.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                        <img src="csreview4.jpg" alt="Review 4" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='pinkmain.jpg';">
+                        <img src="csreview4.jpg" alt="Review 4" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='pinkmain.jpg';">
                         <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                             <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                         </div>
@@ -965,9 +982,9 @@
                     </div>
                 </div>
 
-                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4" role="article">
                     <div onclick="openFullscreenImg('csreview5.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
-                        <img src="csreview5.jpg" alt="Review 5" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='skymain.jpg';">
+                        <img src="csreview5.jpg" alt="Review 5" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" onerror="this.src='skymain.jpg';">
                         <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
                             <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
                         </div>
@@ -985,7 +1002,7 @@
         </div>
     </div>
 
-    <!-- STREAMING_CHUNK:Constructing footer and interactive drawers... -->
+    <!-- STREAMING_CHUNK:Building footer and interactive drawers... -->
     <footer class="bg-[#111111] text-stone-400 border-t border-priyaraGold/20 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-stone-850">
             
@@ -999,7 +1016,7 @@
                 </p>
             </div>
 
-            <div class="space-y-3 text-xs">
+            <nav class="space-y-3 text-xs" aria-label="Footer Quick Links">
                 <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Quick Links</h3>
                 <ul class="space-y-2 text-white">
                     <li><button onclick="navigateTo('home')" class="text-white hover:underline">Home</button></li>
@@ -1008,16 +1025,16 @@
                     <li><a href="#contact" class="text-white hover:underline">Contact</a></li>
                     <li><a href="#faq" class="text-white hover:underline">FAQ</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <div class="space-y-3 text-xs">
+            <nav class="space-y-3 text-xs" aria-label="Social Media Connections">
                 <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Follow Us</h3>
                 <ul class="space-y-2 text-white">
-                    <li><a href="https://facebook.com/PRIYARA" target="_blank" class="text-white hover:underline">Facebook: PRIYARA</a></li>
-                    <li><a href="https://instagram.com/priyara.bd" target="_blank" class="text-white font-semibold hover:underline">Instagram: @priyara.bd</a></li>
+                    <li><a href="https://www.facebook.com/priyara.bd/" target="_blank" rel="noopener noreferrer" class="text-white hover:underline">Facebook: PRIYARA</a></li>
+                    <li><a href="https://instagram.com/priyara.bd" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:underline">Instagram: @priyara.bd</a></li>
                     <li><span class="text-stone-400 block">Dhaka, Bangladesh</span></li>
                 </ul>
-            </div>
+            </nav>
 
             <div class="space-y-4">
                 <h3 class="uppercase tracking-[0.2em] text-xs font-semibold text-white font-serif">Join the PRIYARA Community</h3>
@@ -1097,6 +1114,7 @@
     <!-- Quick View Modal -->
     <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm p-4 hidden">
         <div class="bg-white dark:bg-zinc-900 w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative grid grid-cols-1 md:grid-cols-2">
+            
             <button onclick="toggleQuickViewModal(false)" class="absolute top-4 right-4 z-10 p-2.5 text-stone-700 dark:text-stone-200 bg-white/80 dark:bg-zinc-950/80 rounded-full focus:outline-none hover:text-priyaraGold transition-all">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -1122,6 +1140,7 @@
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -1139,13 +1158,13 @@
         <span id="toastMsg" class="text-xs font-medium tracking-wide"></span>
     </div>
 
-    <!-- Floating WhatsApp -->
+    <!-- Floating Buttons -->
     <div class="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
-        <button id="backToTop" onclick="scrollToTop()" class="bg-[#111111] border border-priyaraGold/40 text-white p-3.5 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 hover:bg-priyaraGold">
+        <button id="backToTop" onclick="scrollToTop()" class="bg-[#111111] border border-priyaraGold/40 text-white p-3.5 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 hover:bg-priyaraGold" aria-label="Scroll back to top">
             <i class="fa-solid fa-arrow-up text-sm"></i>
         </button>
 
-        <a href="https://wa.me/8801700000000" target="_blank" class="bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center animate-pulse" aria-label="WhatsApp help desk">
+        <a href="https://wa.me/8801700000000" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center animate-pulse" aria-label="WhatsApp help desk">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
         </a>
     </div>
@@ -1386,7 +1405,7 @@
 
         function generateFloatingParticles() {
             const particleContainer = document.getElementById('heroParticles');
-            if (!particleContainer) return;
+            if (!particleContainer || window.innerWidth < 768) return;
 
             for (let i = 0; i < 20; i++) {
                 const particle = document.createElement('div');
@@ -1401,7 +1420,7 @@
             }
         }
 
-        /* STREAMING_CHUNK:Rendering catalog grid with Times New Roman pricing... */
+        /* STREAMING_CHUNK:Rendering catalog cards with Times New Roman price font... */
         function renderProducts() {
             const grid = document.getElementById('productGrid');
             if (!grid) return;
@@ -1417,9 +1436,9 @@
                 const displayPrice = `৳${product.price.toLocaleString()}`;
 
                 const card = `
-                    <div class="group flex flex-col justify-between h-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 relative">
+                    <div class="group flex flex-col justify-between h-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 relative" role="article">
                         <div class="relative overflow-hidden aspect-[3/4] bg-[#F7F5F2] dark:bg-zinc-800 rounded-xl">
-                            <img src="${product.mainImage}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-105" onerror="this.src='whitemain.jpg';">
+                            <img src="${product.mainImage}" alt="${product.name}" loading="lazy" decoding="async" class="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-105" onerror="this.src='whitemain.jpg';">
                             
                             <span class="absolute top-4 left-4 bg-white/80 dark:bg-black/75 backdrop-blur-md text-[9px] uppercase tracking-[0.25em] text-[#C9A86A] px-3 py-1 rounded-full font-semibold border border-white/20">
                                 ${product.category}
@@ -1467,13 +1486,13 @@
         function filterCategory(cat) {
             currentFilter = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.className = "cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent";
+                btn.className = "cat-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-priyaraSec dark:bg-zinc-900 text-stone-600 dark:text-stone-300 hover:bg-priyaraGold hover:text-white border border-transparent";
             });
             
             const activeId = cat === 'Premium Cotton Three-Piece' ? 'cat-Cotton' : cat === 'Premium Georgette Three-Piece' ? 'cat-Georgette' : 'cat-All';
             const activeBtn = document.getElementById(activeId);
             if (activeBtn) {
-                activeBtn.className = "cat-btn px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-[#111111] text-white border border-[#111111]";
+                activeBtn.className = "cat-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] uppercase tracking-[0.15em] transition-all font-medium bg-[#111111] text-white border border-[#111111]";
             }
             renderProducts();
         }
@@ -1511,9 +1530,11 @@
             const container = document.getElementById('mobileMenuContainer');
             if (open) {
                 menu.classList.remove('hidden');
+                menu.setAttribute('aria-hidden', 'false');
                 setTimeout(() => container.style.transform = 'translateX(0)', 50);
             } else {
                 container.style.transform = 'translateX(-100%)';
+                menu.setAttribute('aria-hidden', 'true');
                 setTimeout(() => menu.classList.add('hidden'), 300);
             }
         }
@@ -1619,7 +1640,7 @@
                         <button onclick="toggleWishlistSidebar(false); displayProductDetails('${product.id}')" class="p-1.5 text-xs text-priyaraGold hover:underline font-semibold uppercase tracking-wider">
                             Details
                         </button>
-                        <button onclick="toggleWishlist('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors">
+                        <button onclick="toggleWishlist('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors" aria-label="Remove item">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
@@ -1690,7 +1711,7 @@
                             <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
                             <span class="text-xs text-priyaraGold font-times font-bold">৳${product.price.toLocaleString()}</span>
                         </div>
-                        <button onclick="removeFromCart('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors">
+                        <button onclick="removeFromCart('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors" aria-label="Remove item">
                             <i class="fa-solid fa-trash-can text-sm"></i>
                         </button>
                     </div>
