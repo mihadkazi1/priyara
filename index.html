@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <!-- STREAMING_CHUNK:Configuring viewport metadata and Tailwind framework... -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRIYARA | Premium Women's Fashion</title>
@@ -39,7 +40,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Premium Styles -->
+    <!-- STREAMING_CHUNK:Defining gold shimmer animations and luxury keyframes... -->
     <style>
         /* High-Contrast Shimmer Animation for Dark Hero Backdrop */
         @keyframes shimmer {
@@ -50,6 +51,20 @@
             background: linear-gradient(90deg, #FFFFFF 0%, #C9A86A 50%, #FFFFFF 100%);
             background-size: 200% auto;
             animation: shimmer 3.5s infinite linear;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Pure Gold Loading Screen Shimmer */
+        @keyframes pureGoldShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .pure-gold-shimmer {
+        background: linear-gradient(90deg, #FFFFFF 0%, #C9A86A 50%, #FFFFFF 100%);
+           
+            background-size: 200% auto;
+            animation: pureGoldShimmer 2.5s infinite linear;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -119,6 +134,7 @@
 </head>
 <body class="bg-white dark:bg-zinc-950 text-priyaraText dark:text-stone-100 font-sans transition-colors duration-300">
 
+    <!-- STREAMING_CHUNK:Rendering animated loading screen with pure gold text... -->
     <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white dark:bg-zinc-950 transition-all duration-750">
         <div class="relative w-48 h-48 flex items-center justify-center">
             <!-- Shimmer circular accent border -->
@@ -130,14 +146,15 @@
             </div>
         </div>
         <div class="mt-4 text-center">
-            <span class="text-xl font-serif tracking-[0.25em] text-priyaraText font-bold uppercase gold-shimmer-text">PRIYARA</span>
-            <p class="text-[11px] tracking-[0.25em] text-priyaraGold uppercase font-serif italic mt-1">Where Elegance Meets Comfort.</p>
+            <span class="text-2xl font-serif tracking-[0.25em] font-bold uppercase pure-gold-shimmer block">PRIYARA</span>
+            <p class="text-[11px] tracking-[0.25em] pure-gold-shimmer uppercase font-serif italic mt-1 font-semibold">Where Elegance Meets Comfort.</p>
         </div>
     </div>
 
     <!-- Scroll Progress Indicator -->
     <div class="fixed top-0 left-0 h-1 bg-priyaraGold z-50 transition-all duration-100" id="progressBar" style="width: 0%;"></div>
 
+    <!-- STREAMING_CHUNK:Constructing global header navigation bar... -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-priyaraGray dark:border-zinc-900 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 sm:h-24">
@@ -192,7 +209,7 @@
         </div>
     </header>
 
-    <!-- Mobile Side Drawer -->
+    <!-- STREAMING_CHUNK:Rendering mobile menu drawer and search dialog... -->
     <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex transition-opacity duration-300">
         <div class="bg-white dark:bg-zinc-950 w-4/5 max-w-sm h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[-100%] transition-transform duration-300" id="mobileMenuContainer">
             <button onclick="toggleMobileMenu(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white" aria-label="Close menu">
@@ -234,23 +251,22 @@
         </div>
     </div>
 
-    <!-- Main View Section -->
+    <!-- STREAMING_CHUNK:Building hero section layout with animated typewriter title... -->
     <main id="homeView" class="block">
         
-        <!-- Editorial Fullscreen Parallax Hero Section - Pure Middle Alignment & Perfect Viewport Scaling -->
+        <!-- Editorial Fullscreen Parallax Hero Section -->
         <section class="relative min-h-[100dvh] flex flex-col items-center justify-between overflow-hidden px-4 py-6 sm:py-8">
-            <!-- Fullscreen Cover Background with best cover.png -->
-            <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000" style="background-image: url('best cover.png');"></div>
-            <!-- Darker Overlay for completely visible text -->
+            <!-- Fullscreen Cover Background -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none" style="background-image: url('best cover.png'); background-size: cover; background-position: center center;"></div>
+            <!-- Darker Overlay -->
             <div class="absolute inset-0 bg-black/45 backdrop-blur-[2px] pointer-events-none"></div>
             
-            <!-- Soft floating luxury gold dust particles in Hero area -->
+            <!-- Floating gold particles -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none" id="heroParticles"></div>
 
-            <!-- Top spacer for vertical balancing -->
             <div class="h-4 sm:h-8"></div>
 
-            <!-- Pure Middle Content Container -->
+            <!-- Middle Content Container -->
             <div class="relative z-10 max-w-4xl mx-auto text-center space-y-5 sm:space-y-8 my-auto">
                 <p class="text-[10px] sm:text-[13px] uppercase tracking-[0.35em] sm:tracking-[0.45em] text-priyaraGold font-bold drop-shadow">
                     Where Elegance Meets Comfort
@@ -264,7 +280,6 @@
                     </div>
                 </div>
 
-                <!-- Two buttons pushed lower with extra padding -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 pt-8 sm:pt-12 w-full sm:w-auto">
                     <a href="#featured" class="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] bg-white text-priyaraText hover:bg-priyaraGold hover:text-white border border-priyaraGold rounded-full transition-all duration-500 font-bold shadow-lg hover:shadow-xl text-center">
                         Explore Collection
@@ -275,18 +290,10 @@
                 </div>
             </div>
 
-            <!-- Scroll Indicator anchored directly at bottom
-            <div class="relative z-20 pt-6 pb-2 text-center animate-bounce">
-                <a href="#featured" class="flex flex-col items-center justify-center group">
-                    <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.3em] text-priyaraGold mb-1.5 font-bold drop-shadow-lg bg-black/50 backdrop-blur-md px-3.5 py-1 rounded-full border border-priyaraGold/40">Scroll To View</span>
-                    <i class="fa-solid fa-chevron-down text-priyaraGold text-xs sm:text-sm"></i>
-                </a>
-            </div> -->
-             <div class="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-priyaraGold to-transparent z-20"></div>
-            
+            <div class="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-priyaraGold to-transparent z-20"></div>
         </section>
 
-        <!-- Featured Collection Section -->
+        <!-- STREAMING_CHUNK:Rendering main product catalog grid... -->
         <section id="featured" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div class="space-y-3">
@@ -317,11 +324,10 @@
             </div>
         </section>
 
-        <!-- Why Choose PRIYARA & Our Story section -->
+        <!-- STREAMING_CHUNK:Rendering story and brand values section... -->
         <section id="promise" class="py-24 bg-[#F7F5F2] dark:bg-zinc-950 border-y border-priyaraGray dark:border-zinc-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Story Block -->
                 <div class="max-w-3xl mx-auto text-center space-y-6 mb-24">
                     <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-bold">The Authentic Narrative</span>
                     <h2 class="text-3xl sm:text-4xl font-serif tracking-widest text-priyaraText dark:text-white leading-tight">
@@ -333,7 +339,6 @@
                     <div class="w-12 h-[1px] bg-priyaraGold mx-auto"></div>
                 </div>
 
-                <!-- Brand Value Specifications -->
                 <div class="text-center space-y-3 mb-16">
                     <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Atelier Promise</span>
                     <h2 class="text-2xl sm:text-3xl font-serif tracking-widest text-priyaraText dark:text-white">
@@ -410,21 +415,29 @@
             </div>
         </section>
 
-        <!-- Customer Reviews Section -->
+        <!-- STREAMING_CHUNK:Building customer review gallery with zoomable client photos... -->
         <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="text-center space-y-3 mb-16">
-                <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold">Voices of Elegance</span>
+                <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-bold">Customer Feedback</span>
                 <h2 class="text-2xl sm:text-3xl font-serif tracking-widest text-priyaraText dark:text-white font-medium">
-                    Client Journals
+                    Customer Reviews
                 </h2>
                 <div class="w-12 h-[1px] bg-priyaraGold mx-auto my-2"></div>
             </div>
 
-            <!-- Testimonials Grid -->
+            <!-- Testimonials Grid with clickable full-screen photos -->
             <div class="relative w-full overflow-hidden px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="reviewsContainer">
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6" id="reviewsContainer">
+                    
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
                         <div class="space-y-4">
+                            <!-- Clickable Image -->
+                            <div onclick="openFullscreenImg('csreview1.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                                <img src="csreview1.jpg" alt="Customer Review 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='whitemain.jpg';">
+                                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                    <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                                </div>
+                            </div>
                             <div class="flex items-center space-x-1 text-priyaraGold">
                                 <i class="fa-solid fa-star text-[10px]"></i>
                                 <i class="fa-solid fa-star text-[10px]"></i>
@@ -433,7 +446,7 @@
                                 <i class="fa-solid fa-star text-[10px]"></i>
                             </div>
                             <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
-                                "PRIYARA has elevated my wardrobe completely. The embroidery detailing is as fine as global couture lines, and the customer service made me feel incredibly valued. Absolute perfection!"
+                                "PRIYARA has elevated my wardrobe completely. The embroidery detailing is fine, and the customer service made me feel valued!"
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
@@ -445,8 +458,15 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
                         <div class="space-y-4">
+                            <!-- Clickable Image -->
+                            <div onclick="openFullscreenImg('csreview2.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                                <img src="csreview2.jpg" alt="Customer Review 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='Magentamain.jpg';">
+                                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                    <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                                </div>
+                            </div>
                             <div class="flex items-center space-x-1 text-priyaraGold">
                                 <i class="fa-solid fa-star text-[10px]"></i>
                                 <i class="fa-solid fa-star text-[10px]"></i>
@@ -455,7 +475,7 @@
                                 <i class="fa-solid fa-star text-[10px]"></i>
                             </div>
                             <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
-                                "The Royal Magenta collection is breathtaking! The fabric and pure luxurious feel are unmatched. Shipping to Sylhet was seamless, arriving in beautiful luxury boxes."
+                                "The Royal Magenta collection is breathtaking! The fabric and pure luxurious feel are unmatched."
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
@@ -467,8 +487,15 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
                         <div class="space-y-4">
+                            <!-- Clickable Image -->
+                            <div onclick="openFullscreenImg('csreview3.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                                <img src="csreview3.jpg" alt="Customer Review 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='taupemain.jpg';">
+                                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                    <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                                </div>
+                            </div>
                             <div class="flex items-center space-x-1 text-priyaraGold">
                                 <i class="fa-solid fa-star text-[10px]"></i>
                                 <i class="fa-solid fa-star text-[10px]"></i>
@@ -477,7 +504,7 @@
                                 <i class="fa-solid fa-star text-[10px]"></i>
                             </div>
                             <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
-                                "Truly a premium experience. The fabric quality, packaging, and attention to detail in the embroidery borders exceed standard boutique brands. A classic luxury find."
+                                "Truly a premium experience. The fabric quality, packaging, and attention to detail exceed standard boutique brands."
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
@@ -489,8 +516,15 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
                         <div class="space-y-4">
+                            <!-- Clickable Image -->
+                            <div onclick="openFullscreenImg('csreview4.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                                <img src="csreview4.jpg" alt="Customer Review 4" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='pinkmain.jpg';">
+                                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                    <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                                </div>
+                            </div>
                             <div class="flex items-center space-x-1 text-priyaraGold">
                                 <i class="fa-solid fa-star text-[10px]"></i>
                                 <i class="fa-solid fa-star text-[10px]"></i>
@@ -499,7 +533,7 @@
                                 <i class="fa-solid fa-star text-[10px]"></i>
                             </div>
                             <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
-                                "Extremely lightweight yet majestically elegant. PRIYARA offers incredible luxurious drapes. The White Elegance dress received dozens of compliments."
+                                "Extremely lightweight yet majestically elegant. PRIYARA offers incredible luxurious drapes."
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
@@ -510,11 +544,48 @@
                             <span class="text-[10px] uppercase tracking-widest text-priyaraGold font-bold">Verified</span>
                         </div>
                     </div>
+
+                    <div class="bg-white dark:bg-zinc-900 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <!-- Clickable Image -->
+                            <div onclick="openFullscreenImg('csreview5.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                                <img src="csreview5.jpg" alt="Customer Review 5" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='skymain.jpg';">
+                                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                    <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-1 text-priyaraGold">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                            </div>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic leading-relaxed">
+                                "Flawless fitting and exquisite color combinations. Arrived right on time in pristine condition!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-priyaraGray dark:border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-xs font-semibold text-priyaraText dark:text-white">Nusrat Jahan</h4>
+                                <span class="text-[10px] text-stone-400">Dhaka</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest text-priyaraGold font-bold">Verified</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- See More Reviews Button -->
+                <div class="mt-12 text-center">
+                    <button onclick="toggleAllReviewsModal(true)" class="px-8 py-3.5 border border-priyaraGold text-priyaraText dark:text-stone-200 hover:bg-priyaraGold hover:text-white rounded-full text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-sm">
+                        See More Reviews
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Instagram Style Gallery section -->
+        <!-- STREAMING_CHUNK:Rendering Instagram Lookbook and FAQs... -->
         <section id="instagram" class="py-20 bg-[#F7F5F2] dark:bg-zinc-950 border-t border-priyaraGray dark:border-zinc-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-3 mb-16">
@@ -525,7 +596,6 @@
                     <p class="text-xs text-stone-400 font-medium">Join our journey online and explore curated perspectives</p>
                 </div>
 
-                <!-- Gallery Grid -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <button onclick="openFullscreenImg('whitemain.jpg')" class="group relative aspect-square bg-[#ECECEC] rounded-xl overflow-hidden shadow-sm cursor-zoom-in text-left">
                         <img src="whitemain.jpg" alt="White Elegance lookbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -632,7 +702,6 @@
                             </p>
                         </div>
 
-                        <!-- Direct Contacts -->
                         <div class="space-y-4 text-sm">
                             <div class="flex items-center gap-4">
                                 <div class="p-3 bg-white dark:bg-zinc-900 rounded-xl shadow-sm text-priyaraGold">
@@ -655,7 +724,6 @@
                             </div>
                         </div>
 
-                        <!-- Touch Points -->
                         <div class="flex flex-col sm:flex-row gap-3 pt-4">
                             <a href="https://wa.me/8801700000000" target="_blank" class="px-6 py-3.5 bg-emerald-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-emerald-700 transition-all text-center">
                                 <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -668,7 +736,6 @@
                         </div>
                     </div>
 
-                    <!-- Placeholder Google Map embedded elegantly -->
                     <div class="lg:col-span-7 bg-white dark:bg-zinc-900 p-4 rounded-3xl shadow-lg border border-priyaraGray dark:border-zinc-850">
                         <div class="relative aspect-video rounded-2xl overflow-hidden bg-stone-100 dark:bg-zinc-950 flex flex-col items-center justify-center text-center p-6 border border-priyaraGray dark:border-zinc-800">
                             <i class="fa-solid fa-map-location-dot text-4xl text-priyaraGold mb-3 animate-bounce"></i>
@@ -683,7 +750,7 @@
         </section>
     </main>
 
-    <!-- Detailed Product View (Hidden by default, loaded via details toggle) -->
+    <!-- Detailed Product View -->
     <section id="productDetailView" class="hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
             <button onclick="navigateTo('home')" class="group text-[11px] uppercase tracking-[0.25em] text-priyaraText/60 dark:text-stone-300 hover:text-priyaraGold flex items-center gap-2 transition-colors">
@@ -694,7 +761,6 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
-            <!-- Gallery Grid Column (Left) -->
             <div class="lg:col-span-7 space-y-4">
                 <div class="relative aspect-[3/4] bg-priyaraSec dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-lg zoom-img-container" id="detailMainImgContainer">
                     <img id="detailMainImg" src="" alt="Detail visual" class="w-full h-full object-cover object-top zoom-img">
@@ -703,13 +769,10 @@
                     </button>
                 </div>
 
-                <!-- Thumbnail Switcher Panel -->
                 <div class="flex items-center gap-3 overflow-x-auto py-2" id="detailThumbnails">
-                    <!-- Loaded dynamically via script -->
                 </div>
             </div>
 
-            <!-- Context Details Column (Right) -->
             <div class="lg:col-span-5 space-y-8">
                 <div class="space-y-4 border-b border-priyaraGray dark:border-zinc-800 pb-6">
                     <span id="detailAvailability" class="text-[9px] uppercase tracking-[0.3em] font-semibold text-priyaraGold bg-priyaraGold/10 px-3 py-1.5 rounded-full">In Stock</span>
@@ -717,7 +780,7 @@
                     <h1 id="detailName" class="text-3xl sm:text-4xl font-serif tracking-wide text-priyaraText dark:text-white leading-tight"></h1>
 
                     <div class="flex items-baseline space-x-4">
-                        <span id="detailPrice" class="text-2xl font-serif font-bold text-priyaraGold"></span>
+                        <span id="detailPrice" class="text-2xl font-times font-bold text-priyaraGold"></span>
                         <span class="text-[10px] text-stone-400 tracking-wider font-semibold uppercase">Complete Three-Piece Suit</span>
                     </div>
                 </div>
@@ -741,11 +804,9 @@
                 <div class="space-y-3">
                     <h3 class="text-[11px] uppercase tracking-[0.2em] font-bold text-priyaraText dark:text-stone-200">Suite Features</h3>
                     <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-2" id="detailFeatures">
-                        <!-- Loaded dynamically -->
                     </ul>
                 </div>
 
-                <!-- Purchase Buttons -->
                 <div class="space-y-4 pt-4">
                     <button id="detailBuyBtn" onclick="addItemToCartFromDetails()" class="w-full py-4 bg-[#111111] dark:bg-zinc-900 text-white hover:bg-white dark:hover:bg-priyaraGold hover:text-[#111111] dark:hover:text-white hover:shadow-lg border border-[#111111] dark:border-transparent rounded-xl transition-all duration-300 text-xs uppercase tracking-[0.25em] font-bold">
                         Order Now
@@ -769,7 +830,6 @@
                     </button>
                 </div>
 
-                <!-- Specifications Accordion -->
                 <div class="border-t border-priyaraGray dark:border-zinc-800 pt-6 space-y-3">
                     <div class="border-b border-priyaraGray dark:border-zinc-800 pb-3">
                         <button onclick="toggleDetailsAccordion(0)" class="w-full flex items-center justify-between py-2 text-xs uppercase tracking-widest font-semibold text-priyaraText dark:text-stone-200">
@@ -806,19 +866,15 @@
                     </div>
                 </div>
 
-                <!-- Recently Viewed Section -->
                 <div class="border-t border-priyaraGray dark:border-zinc-800 pt-8 space-y-4">
                     <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-priyaraText dark:text-stone-200">Recently Viewed</h3>
                     <div id="recentlyViewedContainer" class="flex gap-4 overflow-x-auto py-2">
-                        <!-- Populated via script -->
                     </div>
                 </div>
 
-                <!-- Related Products Section -->
                 <div class="border-t border-priyaraGray dark:border-zinc-800 pt-8 space-y-4">
                     <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-priyaraText dark:text-stone-200">Related Products</h3>
                     <div id="relatedProductsContainer" class="grid grid-cols-2 gap-4">
-                        <!-- Populated via script -->
                     </div>
                 </div>
 
@@ -826,23 +882,108 @@
         </div>
     </section>
 
-    <!-- Mock 404 Section -->
-    <section id="error404View" class="hidden min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
-        <div class="max-w-md space-y-6">
-            <h1 class="text-8xl font-serif tracking-widest text-priyaraGold">404</h1>
-            <h2 class="text-2xl font-serif italic text-priyaraText dark:text-stone-100">Oops!</h2>
-            <p class="text-sm text-stone-500 leading-relaxed font-serif">
-                This page seems to have slipped away. Let's take you back to elegance.
-            </p>
-            <div class="pt-4">
-                <button onclick="navigateTo('home')" class="px-8 py-4 bg-[#111111] text-white hover:bg-white hover:text-[#111111] border border-[#111111] rounded-full text-xs uppercase tracking-[0.25em] font-bold transition-all duration-300 shadow-sm">
-                    Back to Home
-                </button>
+    <!-- STREAMING_CHUNK:Rendering See More Reviews popup modal... -->
+    <div id="allReviewsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-zinc-900 w-full max-w-5xl max-h-[90vh] rounded-3xl p-6 sm:p-10 overflow-y-auto relative shadow-2xl space-y-8">
+            <button onclick="toggleAllReviewsModal(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-colors">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
+            <div class="text-center space-y-2 border-b border-priyaraGray dark:border-zinc-800 pb-6">
+                <span class="text-[10px] uppercase tracking-[0.35em] text-priyaraGold font-bold">Client Journals</span>
+                <h3 class="text-2xl sm:text-3xl font-serif text-priyaraText dark:text-white">All Verified Customer Reviews</h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div onclick="openFullscreenImg('csreview1.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                        <img src="csreview1.jpg" alt="Review 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='whitemain.jpg';">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                            <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-1 text-priyaraGold">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic">"PRIYARA has elevated my wardrobe completely. The embroidery detailing is fine, and the customer service made me feel valued!"</p>
+                    <div class="pt-3 border-t border-stone-200 dark:border-zinc-800 flex justify-between items-center">
+                        <div><h4 class="text-xs font-bold">Zainab Rahman</h4><span class="text-[10px] text-stone-400">Dhaka</span></div>
+                        <span class="text-[10px] uppercase text-priyaraGold font-bold">Verified</span>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div onclick="openFullscreenImg('csreview2.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                        <img src="csreview2.jpg" alt="Review 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='Magentamain.jpg';">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                            <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-1 text-priyaraGold">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic">"The Royal Magenta collection is breathtaking! The fabric and pure luxurious feel are unmatched."</p>
+                    <div class="pt-3 border-t border-stone-200 dark:border-zinc-800 flex justify-between items-center">
+                        <div><h4 class="text-xs font-bold">Sultana Ahmed</h4><span class="text-[10px] text-stone-400">Sylhet</span></div>
+                        <span class="text-[10px] uppercase text-priyaraGold font-bold">Verified</span>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div onclick="openFullscreenImg('csreview3.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                        <img src="csreview3.jpg" alt="Review 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='taupemain.jpg';">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                            <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-1 text-priyaraGold">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic">"Truly a premium experience. The fabric quality, packaging, and attention to detail exceed standard boutique brands."</p>
+                    <div class="pt-3 border-t border-stone-200 dark:border-zinc-800 flex justify-between items-center">
+                        <div><h4 class="text-xs font-bold">Dr. Farah Kabir</h4><span class="text-[10px] text-stone-400">Chittagong</span></div>
+                        <span class="text-[10px] uppercase text-priyaraGold font-bold">Verified</span>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div onclick="openFullscreenImg('csreview4.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                        <img src="csreview4.jpg" alt="Review 4" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='pinkmain.jpg';">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                            <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-1 text-priyaraGold">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic">"Extremely lightweight yet majestically elegant. PRIYARA offers incredible luxurious drapes."</p>
+                    <div class="pt-3 border-t border-stone-200 dark:border-zinc-800 flex justify-between items-center">
+                        <div><h4 class="text-xs font-bold">Mariam Chowdhury</h4><span class="text-[10px] text-stone-400">Dhaka</span></div>
+                        <span class="text-[10px] uppercase text-priyaraGold font-bold">Verified</span>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 dark:bg-zinc-950 border border-priyaraGray dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div onclick="openFullscreenImg('csreview5.jpg')" class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-priyaraSec cursor-pointer group relative">
+                        <img src="csreview5.jpg" alt="Review 5" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='skymain.jpg';">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                            <i class="fa-solid fa-expand mr-1.5"></i> Click to Zoom
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-1 text-priyaraGold">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-300 font-serif italic">"Flawless fitting and exquisite color combinations. Arrived right on time in pristine condition!"</p>
+                    <div class="pt-3 border-t border-stone-200 dark:border-zinc-800 flex justify-between items-center">
+                        <div><h4 class="text-xs font-bold">Nusrat Jahan</h4><span class="text-[10px] text-stone-400">Dhaka</span></div>
+                        <span class="text-[10px] uppercase text-priyaraGold font-bold">Verified</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Luxury Brand Footer -->
+    <!-- STREAMING_CHUNK:Constructing footer and interactive drawers... -->
     <footer class="bg-[#111111] text-stone-400 border-t border-priyaraGold/20 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-stone-850">
             
@@ -859,19 +1000,19 @@
             <div class="space-y-3 text-xs">
                 <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Quick Links</h3>
                 <ul class="space-y-2 text-white">
-                    <li><button onclick="navigateTo('home')" class="text-white">Home</button></li>
-                    <li><a href="#featured" class="text-white">Collections</a></li>
-                    <li><a href="#promise" class="text-white">About</a></li>
-                    <li><a href="#contact" class="text-white">Contact</a></li>
-                    <li><a href="#faq" class="text-white">FAQ</a></li>
+                    <li><button onclick="navigateTo('home')" class="text-white hover:underline">Home</button></li>
+                    <li><a href="#featured" class="text-white hover:underline">Collections</a></li>
+                    <li><a href="#promise" class="text-white hover:underline">About</a></li>
+                    <li><a href="#contact" class="text-white hover:underline">Contact</a></li>
+                    <li><a href="#faq" class="text-white hover:underline">FAQ</a></li>
                 </ul>
             </div>
 
             <div class="space-y-3 text-xs">
                 <h3 class="uppercase tracking-[0.2em] font-semibold text-white">Follow Us</h3>
                 <ul class="space-y-2 text-white">
-                    <li><a href="https://facebook.com/PRIYARA" target="_blank" class="text-white">Facebook: PRIYARA</a></li>
-                    <li><a href="https://instagram.com/priyara.bd" target="_blank" class="text-white font-semibold">Instagram: @priyara.bd</a></li>
+                    <li><a href="https://facebook.com/PRIYARA" target="_blank" class="text-white hover:underline">Facebook: PRIYARA</a></li>
+                    <li><a href="https://instagram.com/priyara.bd" target="_blank" class="text-white font-semibold hover:underline">Instagram: @priyara.bd</a></li>
                     <li><span class="text-stone-400 block">Dhaka, Bangladesh</span></li>
                 </ul>
             </div>
@@ -898,7 +1039,7 @@
         </div>
     </footer>
 
-    <!-- Slide-out Wishlist Sidebar Drawer -->
+    <!-- Wishlist Sidebar -->
     <div id="wishlistSidebar" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex justify-end">
         <div class="bg-white dark:bg-zinc-950 w-full max-w-md h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[100%] transition-transform duration-300" id="wishlistSidebarContainer">
             <button onclick="toggleWishlistSidebar(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-all">
@@ -912,13 +1053,12 @@
                 </div>
 
                 <div id="wishlistItems" class="space-y-6 pt-6">
-                    <!-- Dynamically filled -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Slide-out Shopping Bag Cart Sidebar -->
+    <!-- Shopping Cart Sidebar -->
     <div id="cartSidebar" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex justify-end">
         <div class="bg-white dark:bg-zinc-950 w-full max-w-md h-full p-8 flex flex-col justify-between shadow-2xl relative translate-x-[100%] transition-transform duration-300" id="cartSidebarContainer">
             <button onclick="toggleCartSidebar(false)" class="absolute top-6 right-6 p-2 text-priyaraText dark:text-white hover:text-priyaraGold transition-all">
@@ -932,15 +1072,13 @@
                 </div>
 
                 <div id="cartItems" class="space-y-6 pt-6">
-                    <!-- Dynamically filled with products -->
                 </div>
             </div>
 
-            <!-- Dynamic Pricing and Checkout Trigger footer -->
             <div class="border-t border-stone-100 dark:border-zinc-900 pt-6 space-y-4" id="cartFooter">
                 <div class="flex items-center justify-between">
                     <span class="text-xs uppercase tracking-widest font-semibold text-priyaraText dark:text-stone-300">Total Order Value:</span>
-                    <span id="cartTotal" class="font-serif text-lg text-priyaraGold font-bold">৳0</span>
+                    <span id="cartTotal" class="font-times text-lg text-priyaraGold font-bold">৳0</span>
                 </div>
 
                 <button onclick="checkoutViaWhatsApp()" class="w-full block text-center py-4 bg-emerald-600 hover:bg-emerald-750 text-white rounded-xl text-xs uppercase tracking-widest font-bold transition-all shadow-lg">
@@ -954,10 +1092,9 @@
         </div>
     </div>
 
-    <!-- Floating Quick View Modal popup -->
+    <!-- Quick View Modal -->
     <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm p-4 hidden">
         <div class="bg-white dark:bg-zinc-900 w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative grid grid-cols-1 md:grid-cols-2">
-            
             <button onclick="toggleQuickViewModal(false)" class="absolute top-4 right-4 z-10 p-2.5 text-stone-700 dark:text-stone-200 bg-white/80 dark:bg-zinc-950/80 rounded-full focus:outline-none hover:text-priyaraGold transition-all">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -970,7 +1107,7 @@
                 <div class="space-y-3">
                     <span id="quickViewCat" class="text-[9px] uppercase tracking-[0.3em] font-semibold text-priyaraGold bg-priyaraGold/10 px-3 py-1 rounded-full"></span>
                     <h3 id="quickViewName" class="font-serif text-2xl tracking-wide text-priyaraText dark:text-white"></h3>
-                    <span id="quickViewPrice" class="text-xl font-serif text-priyaraGold font-bold"></span>
+                    <span id="quickViewPrice" class="text-xl font-times text-priyaraGold font-bold"></span>
                     <p id="quickViewDesc" class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed font-serif italic"></p>
                 </div>
 
@@ -983,40 +1120,36 @@
                     </button>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Image Fullscreen Lightbox Frame -->
+    <!-- Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4" onclick="toggleLightbox(false, '')">
         <button class="absolute top-6 right-6 text-white hover:text-priyaraGold p-3 focus:outline-none">
             <i class="fa-solid fa-xmark text-3xl"></i>
         </button>
-        <img id="lightboxImg" src="" alt="Expanded View representation" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+        <img id="lightboxImg" src="" alt="Expanded View" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
     </div>
 
-    <!-- Notification Toast alerts -->
+    <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#111111] text-white border border-priyaraGold px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 hidden transition-all max-w-sm">
         <i class="fa-solid fa-sparkles text-priyaraGold animate-pulse"></i>
         <span id="toastMsg" class="text-xs font-medium tracking-wide"></span>
     </div>
 
-    <!-- Floating Direct Assistance Buttons -->
+    <!-- Floating WhatsApp -->
     <div class="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
-        <!-- Scroll State Back to top -->
         <button id="backToTop" onclick="scrollToTop()" class="bg-[#111111] border border-priyaraGold/40 text-white p-3.5 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 hover:bg-priyaraGold">
             <i class="fa-solid fa-arrow-up text-sm"></i>
         </button>
 
-        <!-- Floating WhatsApp concierge -->
         <a href="https://wa.me/8801700000000" target="_blank" class="bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center animate-pulse" aria-label="WhatsApp help desk">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
         </a>
     </div>
 
-    <!-- Complete Javascript Mechanics Block -->
+    <!-- STREAMING_CHUNK:Executing script logic for product database and image handling... -->
     <script>
-        // Core Database: 8 Signature Collections categorized explicitly
         const BRAND_PRODUCTS = [
             {
                 id: 'white-elegance',
@@ -1045,7 +1178,7 @@
                 category: 'Premium Cotton Three-Piece',
                 availability: 'In Stock',
                 mainImage: 'pinkmain.jpg',
-                images: ['pinkmain.jpg', 'pink1.jpg', 'pink2.jpg', 'pink3.jpg', 'pink4.jpg', 'pink5.jpg'],
+                images: ['pinkmain.jpg', 'pink1.jpg', 'pink2.jpg', 'pink3.jpg', 'pink4.jpg', 'pink5.jpg', 'pink6.jpg', 'pink7.jpg'],
                 description: 'Rose Pink combines femininity and sophistication with delicate embroidery and premium cotton fabric. Designed for women who appreciate effortless elegance and comfort.',
                 fabric: 'Premium Cotton',
                 care: 'Hand wash recommended • Use mild detergent • Do not bleach • Iron at low temperature • Dry in shade',
@@ -1169,7 +1302,6 @@
             }
         ];
 
-        // User State Handlers
         let wishlist = [];
         let cart = [];
         let recentlyViewed = [];
@@ -1177,7 +1309,6 @@
         let detailActiveImgIndex = 0;
         let selectedProductForDetails = null;
 
-        // Custom typewriter sequencing
         const typingSentences = [
             "Premium Women's Fashion",
             "Pakistani Inspired Collection",
@@ -1194,22 +1325,17 @@
         let typingSpeed = 100;
 
         window.addEventListener('DOMContentLoaded', () => {
-            // Loader timeout mechanics
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.classList.add('opacity-0');
                 setTimeout(() => loader.style.display = 'none', 750);
             }, 1800);
 
-            // Populate the main catalog layout grid
             renderProducts();
-            
-            // Initiate standard animation loops
             typeWriter();
             generateFloatingParticles();
         });
 
-        // Track user scroll progression state
         window.addEventListener('scroll', () => {
             const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1217,7 +1343,6 @@
             
             document.getElementById("progressBar").style.width = scrolled + "%";
 
-            // Toggle floating return to top button
             const backBtn = document.getElementById('backToTop');
             if (winScroll > 400) {
                 backBtn.classList.remove('opacity-0');
@@ -1228,7 +1353,6 @@
             }
         });
 
-        // Dynamic typing marquee animations
         function typeWriter() {
             const typingTextElem = document.getElementById('typingText');
             if (!typingTextElem) return;
@@ -1240,7 +1364,7 @@
                 charIndex++;
                 if (charIndex === currentStr.length) {
                     isDeleting = true;
-                    typingSpeed = 2200; // Pause at completion state
+                    typingSpeed = 2200;
                 } else {
                     typingSpeed = 70;
                 }
@@ -1250,7 +1374,7 @@
                 if (charIndex === 0) {
                     isDeleting = false;
                     sentenceIndex = (sentenceIndex + 1) % typingSentences.length;
-                    typingSpeed = 600; // Delay before starting next line
+                    typingSpeed = 600;
                 } else {
                     typingSpeed = 35;
                 }
@@ -1258,7 +1382,6 @@
             setTimeout(typeWriter, typingSpeed);
         }
 
-        // Generate gold vectors inside Hero background
         function generateFloatingParticles() {
             const particleContainer = document.getElementById('heroParticles');
             if (!particleContainer) return;
@@ -1276,7 +1399,7 @@
             }
         }
 
-        // Render main catalog cards with category parameters
+        /* STREAMING_CHUNK:Rendering catalog grid with Times New Roman pricing... */
         function renderProducts() {
             const grid = document.getElementById('productGrid');
             if (!grid) return;
@@ -1294,8 +1417,7 @@
                 const card = `
                     <div class="group flex flex-col justify-between h-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 relative">
                         <div class="relative overflow-hidden aspect-[3/4] bg-[#F7F5F2] dark:bg-zinc-800 rounded-xl">
-                            <!-- Image Hover Zoom Strategy -->
-                            <img src="${product.mainImage}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                            <img src="${product.mainImage}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-105" onerror="this.src='whitemain.jpg';">
                             
                             <span class="absolute top-4 left-4 bg-white/80 dark:bg-black/75 backdrop-blur-md text-[9px] uppercase tracking-[0.25em] text-[#C9A86A] px-3 py-1 rounded-full font-semibold border border-white/20">
                                 ${product.category}
@@ -1305,7 +1427,6 @@
                                 <i class="${isFavorite ? 'fa-solid' : 'fa-regular'} fa-heart text-sm ${isFavorite ? 'text-[#C9A86A]' : ''}"></i>
                             </button>
 
-                            <!-- Hover Overlay Visual Strategy -->
                             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col gap-2 justify-end">
                                 <button onclick="openQuickView('${product.id}')" class="bg-white hover:bg-priyaraGold hover:text-white text-[10px] text-priyaraText font-semibold py-3 uppercase tracking-widest rounded transition-all duration-300">
                                     Quick View
@@ -1315,7 +1436,6 @@
                                 </button>
                             </div>
 
-                            <!-- Mobile Direct view helper -->
                             <div class="absolute bottom-3 left-3 md:hidden">
                                 <button onclick="displayProductDetails('${product.id}')" class="bg-white/95 backdrop-blur-sm text-[8px] uppercase tracking-widest text-[#111111] px-3 py-2 rounded-full font-bold shadow-md">
                                     View Details
@@ -1323,14 +1443,13 @@
                             </div>
                         </div>
 
-                        <!-- Card text metadata -->
                         <div class="pt-4 pb-2 px-3 flex flex-col justify-between flex-grow">
                             <div>
                                 <h3 class="font-serif text-lg sm:text-xl tracking-wide text-priyaraText dark:text-white group-hover:text-priyaraGold transition-colors duration-300">${product.name}</h3>
                                 <p class="text-[10px] text-stone-400 dark:text-stone-500 uppercase tracking-widest mt-1">${product.fabric}</p>
                             </div>
                             <div class="flex items-center justify-between mt-3 pt-3 border-t border-[#ECECEC] dark:border-zinc-800">
-                                <span class="font-serif text-base sm:text-lg font-bold text-priyaraGold">${displayPrice}</span>
+                                <span class="font-times text-base sm:text-lg font-bold text-priyaraGold">${displayPrice}</span>
                                 <button onclick="addToCart('${product.id}')" class="text-[10px] uppercase tracking-widest text-[#111111] dark:text-stone-300 hover:text-priyaraGold font-bold transition-colors flex items-center gap-1">
                                     <span>Order Now</span>
                                     <i class="fa-solid fa-arrow-right text-[9px]"></i>
@@ -1343,7 +1462,6 @@
             });
         }
 
-        // Category filter click handler
         function filterCategory(cat) {
             currentFilter = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
@@ -1358,7 +1476,6 @@
             renderProducts();
         }
 
-        // Accordion collapsible logic
         function toggleAccordion(index) {
             const ans = document.getElementById(`faq-ans-${index}`);
             const icon = document.getElementById(`faq-icon-${index}`);
@@ -1373,7 +1490,6 @@
             }
         }
 
-        // Product Details window accordions
         function toggleDetailsAccordion(index) {
             const ans = document.getElementById(`detail-faq-ans-${index}`);
             const icon = document.getElementById(`detail-faq-icon-${index}`);
@@ -1388,7 +1504,6 @@
             }
         }
 
-        // Mobile Menu Drawer Handles
         function toggleMobileMenu(open) {
             const menu = document.getElementById('mobileMenu');
             const container = document.getElementById('mobileMenuContainer');
@@ -1401,7 +1516,6 @@
             }
         }
 
-        // Search Overlay filters
         function toggleSearchOverlay(open) {
             const overlay = document.getElementById('searchOverlay');
             if (open) {
@@ -1435,18 +1549,18 @@
             matches.forEach(product => {
                 resultsDiv.innerHTML += `
                     <div onclick="toggleSearchOverlay(false); displayProductDetails('${product.id}')" class="flex gap-4 items-center bg-stone-50 dark:bg-zinc-900 p-3 rounded-xl border border-priyaraGray dark:border-zinc-800 cursor-pointer hover:border-priyaraGold transition-all">
-                        <img src="${product.mainImage}" alt="${product.name}" class="w-12 h-16 object-cover object-top rounded-lg">
+                        <img src="${product.mainImage}" alt="${product.name}" class="w-12 h-16 object-cover object-top rounded-lg" onerror="this.src='whitemain.jpg';">
                         <div>
                             <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
                             <p class="text-[10px] text-stone-400 uppercase">${product.category} - ${product.fabric}</p>
-                            <span class="text-xs text-priyaraGold font-bold">৳${product.price.toLocaleString()}</span>
+                            <span class="text-xs text-priyaraGold font-times font-bold">৳${product.price.toLocaleString()}</span>
                         </div>
                     </div>
                 `;
             });
         }
 
-        // Wishlist Drawer mechanics
+        /* STREAMING_CHUNK:Managing drawers, cart, and reviews popup modals... */
         function toggleWishlistSidebar(open) {
             const sidebar = document.getElementById('wishlistSidebar');
             const container = document.getElementById('wishlistSidebarContainer');
@@ -1495,10 +1609,10 @@
 
                 container.innerHTML += `
                     <div class="flex gap-4 items-center border-b border-stone-100 dark:border-zinc-900 pb-4">
-                        <img src="${product.mainImage}" alt="${product.name}" class="w-16 h-20 object-cover object-top rounded-lg shadow-sm">
+                        <img src="${product.mainImage}" alt="${product.name}" class="w-16 h-20 object-cover object-top rounded-lg shadow-sm" onerror="this.src='whitemain.jpg';">
                         <div class="flex-grow">
                             <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
-                            <span class="text-xs text-priyaraGold font-bold">৳${product.price.toLocaleString()}</span>
+                            <span class="text-xs text-priyaraGold font-times font-bold">৳${product.price.toLocaleString()}</span>
                         </div>
                         <button onclick="toggleWishlistSidebar(false); displayProductDetails('${product.id}')" class="p-1.5 text-xs text-priyaraGold hover:underline font-semibold uppercase tracking-wider">
                             Details
@@ -1511,7 +1625,6 @@
             });
         }
 
-        // Cart Drawer mechanics
         function toggleCartSidebar(open) {
             const sidebar = document.getElementById('cartSidebar');
             const container = document.getElementById('cartSidebarContainer');
@@ -1570,10 +1683,10 @@
                 total += product.price;
                 container.innerHTML += `
                     <div class="flex gap-4 items-center border-b border-stone-100 dark:border-zinc-900 pb-4">
-                        <img src="${product.mainImage}" alt="${product.name}" class="w-16 h-20 object-cover object-top rounded-lg shadow-sm">
+                        <img src="${product.mainImage}" alt="${product.name}" class="w-16 h-20 object-cover object-top rounded-lg shadow-sm" onerror="this.src='whitemain.jpg';">
                         <div class="flex-grow">
                             <h4 class="font-serif text-sm text-[#111111] dark:text-white font-semibold">${product.name}</h4>
-                            <span class="text-xs text-priyaraGold font-bold">৳${product.price.toLocaleString()}</span>
+                            <span class="text-xs text-priyaraGold font-times font-bold">৳${product.price.toLocaleString()}</span>
                         </div>
                         <button onclick="removeFromCart('${product.id}')" class="p-2 text-stone-400 hover:text-red-500 transition-colors">
                             <i class="fa-solid fa-trash-can text-sm"></i>
@@ -1602,7 +1715,6 @@
             }
         }
 
-        // WhatsApp Checkout Direct Route
         function checkoutViaWhatsApp() {
             const phone = "8801700000000";
             const items = cart.map(id => BRAND_PRODUCTS.find(p => p.id === id).name).join(', ');
@@ -1611,9 +1723,19 @@
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        // Quick View overlay handles
         function toggleQuickViewModal(open) {
             const modal = document.getElementById('quickViewModal');
+            if (open) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function toggleAllReviewsModal(open) {
+            const modal = document.getElementById('allReviewsModal');
             if (open) {
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
@@ -1633,14 +1755,13 @@
             document.getElementById('quickViewDesc').innerText = product.description;
             document.getElementById('quickViewPrice').innerText = `৳${product.price.toLocaleString()}`;
 
-            // Map actions dynamically
             document.getElementById('quickViewAddBtn').setAttribute('onclick', `addToCart('${product.id}'); toggleQuickViewModal(false);`);
             document.getElementById('quickViewDetailBtn').setAttribute('onclick', `displayProductDetails('${product.id}'); toggleQuickViewModal(false);`);
 
             toggleQuickViewModal(true);
         }
 
-        // Display premium individual details page route
+        /* STREAMING_CHUNK:Executing product page routing and image lightboxes... */
         function displayProductDetails(id) {
             const product = BRAND_PRODUCTS.find(p => p.id === id);
             if (!product) return;
@@ -1648,7 +1769,6 @@
             selectedProductForDetails = product;
             detailActiveImgIndex = 0;
 
-            // Load values inside detail layout variables
             document.getElementById('detailMainImg').src = product.images[0];
             document.getElementById('detailAvailability').innerText = product.availability;
             document.getElementById('detailName').innerText = product.name;
@@ -1657,35 +1777,28 @@
             document.getElementById('detailCategory').innerText = product.category;
             document.getElementById('detailPrice').innerText = `৳${product.price.toLocaleString()}`;
 
-            // Load bullet features
             const featureList = document.getElementById('detailFeatures');
             featureList.innerHTML = '';
             product.features.forEach(feat => {
                 featureList.innerHTML += `<li class="flex items-center gap-2"><span class="text-priyaraGold">✦</span> <span>${feat}</span></li>`;
             });
 
-            // Switch thumbnails selector panel
             const thumbnailsContainer = document.getElementById('detailThumbnails');
             thumbnailsContainer.innerHTML = '';
             product.images.forEach((img, index) => {
                 thumbnailsContainer.innerHTML += `
                     <button onclick="switchDetailMainImg(${index})" class="relative w-20 sm:w-24 aspect-[3/4] rounded-lg overflow-hidden border-2 flex-shrink-0 transition-all ${index === 0 ? 'border-priyaraGold' : 'border-transparent'} hover:border-priyaraGold/40" id="detail-thumb-${index}">
-                        <img src="${img}" alt="thumbnail" class="w-full h-full object-cover object-top">
+                        <img src="${img}" alt="thumbnail" class="w-full h-full object-cover object-top" onerror="this.src='whitemain.jpg';">
                     </button>
                 `;
             });
 
-            // Map custom direct checkout handlers
             document.getElementById('detailBuyBtn').setAttribute('onclick', `addToCart('${product.id}')`);
             
-            // Map messaging trigger link coordinates
             const messageTxt = `Hello PRIYARA, I am highly interested in ordering your elegant "${product.name}" suite. Is it currently in stock for delivery?`;
             document.getElementById('detailWAMsgBtn').href = `https://wa.me/8801700000000?text=${encodeURIComponent(messageTxt)}`;
 
-            // Track Recently Viewed memory (max 4)
             addToRecentlyViewed(product.id);
-
-            // Populated Related items from same material parameters
             renderRelatedProducts(product.category, product.id);
 
             navigateTo('details');
@@ -1697,7 +1810,6 @@
             detailActiveImgIndex = index;
             document.getElementById('detailMainImg').src = selectedProductForDetails.images[index];
 
-            // Re-highlight border active thumbnails
             selectedProductForDetails.images.forEach((_, idx) => {
                 const btn = document.getElementById(`detail-thumb-${idx}`);
                 if (btn) {
@@ -1712,7 +1824,6 @@
             });
         }
 
-        // Memory tracker for recently viewed suits
         function addToRecentlyViewed(id) {
             recentlyViewed = recentlyViewed.filter(viewId => viewId !== id);
             recentlyViewed.unshift(id);
@@ -1733,15 +1844,14 @@
 
                 container.innerHTML += `
                     <div onclick="displayProductDetails('${p.id}')" class="flex-shrink-0 w-24 text-left cursor-pointer hover:opacity-80 transition-all">
-                        <img src="${p.mainImage}" alt="${p.name}" class="w-24 h-32 object-cover object-top rounded-lg shadow-sm">
+                        <img src="${p.mainImage}" alt="${p.name}" class="w-24 h-32 object-cover object-top rounded-lg shadow-sm" onerror="this.src='whitemain.jpg';">
                         <p class="font-serif text-xs font-semibold tracking-wide text-priyaraText dark:text-white truncate mt-2">${p.name}</p>
-                        <p class="text-[10px] text-priyaraGold font-bold">৳${p.price.toLocaleString()}</p>
+                        <p class="text-[10px] text-priyaraGold font-times font-bold">৳${p.price.toLocaleString()}</p>
                     </div>
                 `;
             });
         }
 
-        // Render related dresses in the same category
         function renderRelatedProducts(category, excludeId) {
             const container = document.getElementById('relatedProductsContainer');
             if (!container) return;
@@ -1753,18 +1863,17 @@
                 container.innerHTML += `
                     <div onclick="displayProductDetails('${p.id}')" class="cursor-pointer group flex flex-col gap-2">
                         <div class="relative overflow-hidden aspect-[3/4] bg-stone-50 dark:bg-zinc-800 rounded-xl">
-                            <img src="${p.mainImage}" alt="${p.name}" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <img src="${p.mainImage}" alt="${p.name}" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.src='whitemain.jpg';">
                         </div>
                         <div>
                             <h4 class="font-serif text-sm font-semibold tracking-wide text-priyaraText dark:text-white truncate">${p.name}</h4>
-                            <p class="text-[11px] text-priyaraGold font-bold">৳${p.price.toLocaleString()}</p>
+                            <p class="text-[11px] text-priyaraGold font-times font-bold">৳${p.price.toLocaleString()}</p>
                         </div>
                     </div>
                 `;
             });
         }
 
-        // Navigation state router
         function navigateTo(view) {
             const home = document.getElementById('homeView');
             const details = document.getElementById('productDetailView');
@@ -1773,21 +1882,20 @@
             if (view === 'home') {
                 home.classList.remove('hidden');
                 details.classList.add('hidden');
-                errorView.classList.add('hidden');
+                if(errorView) errorView.classList.add('hidden');
                 selectedProductForDetails = null;
             } else if (view === 'details') {
                 home.classList.add('hidden');
                 details.classList.remove('hidden');
-                errorView.classList.add('hidden');
+                if(errorView) errorView.classList.add('hidden');
             } else if (view === '404') {
                 home.classList.add('hidden');
                 details.classList.add('hidden');
-                errorView.classList.remove('hidden');
+                if(errorView) errorView.classList.remove('hidden');
                 scrollToTop();
             }
         }
 
-        // Visual Dark/Light toggle
         function toggleDarkMode() {
             const html = document.documentElement;
             const icon = document.getElementById('themeIcon');
@@ -1802,7 +1910,6 @@
             }
         }
 
-        // Clipboard Copy Address Tool
         function copyAddressLink() {
             const dummy = document.createElement('input');
             document.body.appendChild(dummy);
@@ -1813,7 +1920,6 @@
             triggerToast('Copied editorial address link to clipboard.');
         }
 
-        // Lightbox Expand Frame
         function toggleLightbox(open, imgUrl) {
             const box = document.getElementById('lightbox');
             const img = document.getElementById('lightboxImg');
@@ -1837,7 +1943,6 @@
             toggleLightbox(true, selectedProductForDetails.images[detailActiveImgIndex]);
         }
 
-        // Notification UI Toast Alerts
         function triggerToast(msg) {
             const toast = document.getElementById('toast');
             const text = document.getElementById('toastMsg');
